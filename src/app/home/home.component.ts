@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
   Formulario(data?) {
     this.form = this.formBuider.group({
-      uf: data ? data.uf : '',
+      uf: data ? data.uf : 'Selecione um Estado',
     });
     // console.log("FORMULARIO", this.formulario.value);
   }

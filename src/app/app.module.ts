@@ -10,12 +10,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgSelectModule } from '@ng-select/ng-select';
 import { LoginComponent } from './login/login.component';
+import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formulario-anuncio.component';
+import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.component';
+import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    FormularioAnuncioComponent,
+    ListaAnuncioComponent,
+    FormularioPessoaComponent
   ],
   imports: [
     BrowserModule,

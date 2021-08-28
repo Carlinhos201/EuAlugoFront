@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formulario-anuncio.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
@@ -11,10 +12,11 @@ const routes: Routes = [
    
 
     // children: [
-    //   {path: 'login', component: LoginComponent},
+    //   {path: 'criar-anuncio', component: FormularioAnuncioComponent},
     // ]
   },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'criar-anuncio', component: FormularioAnuncioComponent}
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
 ];
 

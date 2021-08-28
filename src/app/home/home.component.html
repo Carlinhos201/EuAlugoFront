@@ -13,65 +13,48 @@
 
                 <div class="col-lg-12">
                     <div class="" style="font: -webkit-small-control;">
-
-                        <!-- <form action="" id=""> -->
-                        <!-- <select  class="form-control"  >
-                                   <option  v-for="uf in estados" :key="uf" @change="getCidades(formulario.value.uf)">
-                                        {{estados}}   
-                                    </option> 
-                            </select> -->
-                        <!--                             
-                            <select name="cidades" id="cidades" class="form-control" v-model="cidades">
-                                    <option  v-for="cidades in cidades" :key="cidades.id" >
-                                            {{cidades.nome}}
-                                    </option>
-                            </select> -->
                         <div class="row">
-                            <div class="col-lg-4">
-                                <span class="input-group-text" id="basic-addon2" style="width: 25%;">
-                                    <!-- <mat-label>UF</mat-label> -->
-                                    <!-- <app-input label="UF"> -->
-                                        <select  formControlName="uf" name="uf"
-                                            (change)="buscarCidadesPorUf(form.value.uf)">
-                                            <option *ngFor="let uf of estados" [value]="uf">{{uf}}
-                                            </option>
-                                        </select>
-                                    <!-- </app-input> -->
-                                </span>
+                            <div class="col-lg-5">
+
+                                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
+                                    placeholder="Estado">
+                                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                                    </ng-option>
+                                </ng-select>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-7">
                                 <ng-select name="cidades" placeholder="Selecione uma Cidade" style="width: 75%;">
                                     <ng-option *ngFor="let city of arrayCidades" [value]="city">
                                         {{city.nome}}
                                     </ng-option>
                                 </ng-select>
                             </div>
-                            </div>
-                            <!-- </form> -->
-                        </div>
-                    </div>
-
-                    <div class="row" style="font: -webkit-small-control;">
-                        <div class="col-lg-6">
-                            <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
-                            <input class="form-control" type="text" placeholder="Busque por Bairro">
-                        </div>
-                        <div class="">
-                            <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
-                            <input class="form-control" type="text" placeholder="Nº de Quartos">
                         </div>
 
                     </div>
                 </div>
-                <div style="margin-top: 12px; text-align: center">
-                    <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
-                        Buscar
-                    </button>
-                    <div style="margin: inherit;">
-                        <p style="text-align: center"> <a :href="register">Proprietário anuncie seu imóvel já</a></p>
+
+                <div class="row" style="font: -webkit-small-control;">
+                    <div class="col-lg-6">
+                        <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
+                        <input class="form-control" type="text" placeholder="Busque por Bairro">
+                    </div>
+                    <div class="">
+                        <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
+                        <input class="form-control" type="text" placeholder="Nº de Quartos">
                     </div>
 
                 </div>
+            </div>
+            <div style="margin-top: 12px; text-align: center">
+                <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
+                    Buscar
+                </button>
+                <div style="margin: inherit;">
+                    <p style="text-align: center"> <a href="criar-anuncio">Proprietário anuncie seu imóvel já</a></p>
+                </div>
+
+            </div>
         </form>
     </div>
 
