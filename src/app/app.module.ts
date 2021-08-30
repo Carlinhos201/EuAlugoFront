@@ -14,6 +14,7 @@ import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formul
 import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.component';
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formula
     LoginComponent,
     FormularioAnuncioComponent,
     ListaAnuncioComponent,
-    FormularioPessoaComponent
+    FormularioPessoaComponent,
+    
   ],
   imports: [
     BrowserModule,
