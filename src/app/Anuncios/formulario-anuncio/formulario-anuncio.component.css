@@ -55,6 +55,19 @@
     overflow: auto; overflow: hidden;
 }
 
+#input {
+    text-align: center;
+}
+
+.form-row{
+    margin-left: 400px;
+}
+
 label{
     font-weight: bold;
+}
+
+input{
+    border-radius: 40px;
+    text-align: center;
 }

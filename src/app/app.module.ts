@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formulario-anuncio.component';
 import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.component';
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
-
+import  { NgxMaskModule }  from  'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formula
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     
