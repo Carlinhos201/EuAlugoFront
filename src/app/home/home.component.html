@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
 
     <img src="../../assets/img/home-bg.jpg" alt="">
 
@@ -123,8 +123,147 @@
     </div>
 
 </div>
+<router-outlet></router-outlet> -->
+<section id="hero" class="d-flex align-items-center">
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                data-aos="fade-up" data-aos-delay="200">
+                <h1>Seja Bem-Vindo ao <strong style="color: orangered;">Eu Alugo</strong></h1>
+                <h2>O lugar ideal para você encontrar e anuncionar seu Imóvel</h2>
+                <div class="row">
+                <div class="d-lg-flex">
+                    <a href="" class="btn-get-started scrollto">Quero Anunciar</a>
+                </div>
+                <div class="d-lg-flex">
+                    <a href="" class="btn-get-started scrollto">Quero Alugar</a>
+                </div>
+            </div>
+            </div>
 
+        </div>
 
+    </div>
 
-<!-- <router-outlet></router-outlet> -->
+</section>
+<section>
+    <div class="metade">
+        <div class="texto">
+            <h1>Encontre o anúncio de uma forma mais rápida utilizando o filtro abaixo</h1>
+        </div>
+        <form [formGroup]="form"
+            style="color: white;border: groove; background: grey; border-radius: 10px; background: white">
+
+            <div class="" style="background: white; padding: 50px 60px 30px 60px">
+                <h3 style="color: grey; text-align: center;margin-bottom: 40px;">Encontre o imóvel ideal para você!
+                </h3>
+
+                <div class="col-lg-12">
+                    <div class="" style="font: -webkit-small-control;">
+                        <div class="row">
+                            <div class="col-lg-5">
+
+                                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
+                                    placeholder="Estado">
+                                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                            <div class="col-lg-7">
+                                <ng-select name="cidades" placeholder="Selecione uma Cidade" style="width: 75%;">
+                                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                                        {{city.nome}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row" style="font: -webkit-small-control;">
+                    <div class="col-lg-6">
+                        <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
+                        <input class="form-control" type="text" placeholder="Busque por Bairro">
+                    </div>
+                    <div class="">
+                        <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
+                        <input class="form-control" type="text" placeholder="Nº de Quartos">
+                    </div>
+
+                </div>
+            </div>
+            <div style="margin-top: 12px; text-align: center">
+                <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
+                    Buscar
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Arsha</h3>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Eu Alugo</span></strong>. Todos os Direitos Reservados
+            </div>
+            <!-- <div class="credits">
+                Designed by <a href="">BootstrapMade</a>
+            </div> -->
+        </div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+    <div id="preloader"></div>

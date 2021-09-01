@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formulario-anuncio.component';
 import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.component';
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
-import  { NgxMaskModule }  from  'ngx-mask'
+import  { NgxMaskModule }  from  'ngx-mask';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import  { NgxMaskModule }  from  'ngx-mask'
     HttpClientModule,
     BrowserAnimationsModule,
     NgSelectModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    // MatIconModule
   ],
   providers: [
     
