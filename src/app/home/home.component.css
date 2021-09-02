@@ -82,7 +82,7 @@ body {
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: black;
+    color: #37517e;
   }
   
   #hero h2 {
@@ -265,7 +265,7 @@ body {
   --------------------------------------------------------------*/
   #footer {
     font-size: 14px;
-    background: khaki;
+    /* background: khaki; */
   }
   
   #footer .footer-newsletter {
@@ -287,7 +287,7 @@ body {
   
   #footer .footer-newsletter form {
     margin-top: 30px;
-    background: khaki;
+    /* background: khaki; */
     padding: 6px 10px;
     position: relative;
     border-radius: 50px;
@@ -323,7 +323,7 @@ body {
   
   #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: khaki;
+    /* background: khaki; */
   }
   
   #footer .footer-top .footer-contact {
