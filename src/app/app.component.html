@@ -14,7 +14,7 @@
             <li><a href="/">Teste 2</a></li>
             <li><a href="/">Teste 3</a></li>
             <li>
-                <a href="login" >Entrar</a>
+                <a href="login" >{{token?.user.name ? token?.user.name  : 'Entrar'}}</a>
                 <form action="" class="logout" method="POST" style="display: none">
                     
                 </form>
