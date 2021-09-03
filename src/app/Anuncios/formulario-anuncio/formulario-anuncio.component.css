@@ -70,4 +70,6 @@ label{
 input{
     border-radius: 40px;
     text-align: center;
+    border: 1px solid;
+    font-weight: initial
 }

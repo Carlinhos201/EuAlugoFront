@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -28,6 +28,24 @@ export class AuthService {
         // }
         return token;
       }));
+  }
+  getUserLoggedIn() {
+    return localStorage.getItem("_token");
+  }
+  user() {
+    return this.http.get<any>(`http://localhost:8000/api/auth/user`, { headers: this.userToken() })
+      .pipe(
+        tap(user => {
+          return user;
+        })
+      )
+  }
+  userToken() {
+    let token = JSON.parse(this.getUserLoggedIn());
+    const headers = new HttpHeaders({
+      'Authorization': token["token_type"] + " " + token['access_token']
+    });
+    return headers;
   }
   setTokenLoggedIn(token: any) {
     localStorage.setItem('_token', `${JSON.stringify(token)}`)

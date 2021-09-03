@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
 
     <img src="../../assets/img/home-bg.jpg" alt="">
 
@@ -123,8 +123,182 @@
     </div>
 
 </div>
+<router-outlet></router-outlet> -->
+<section id="hero" class="d-flex align-items-center">
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                data-aos="fade-up" data-aos-delay="200">
+                <h1>Seja Bem-Vindo ao <strong style="color: orangered;">Eu Alugo</strong></h1>
+                <h2>O lugar ideal para você encontrar e anuncionar seu Imóvel</h2>
+                <div class="row">
+                    <div class="d-lg-flex">
+                        <a href="" class="btn-get-started scrollto">Quero Anunciar</a>
+                    </div>
+                    <div class="d-lg-flex">
+                        <a href="" class="btn-get-started scrollto">Quero Alugar</a>
+                    </div>
+                </div>
+            </div>
 
+        </div>
 
+    </div>
 
-<!-- <router-outlet></router-outlet> -->
+</section>
+<section>
+    <div class="metade">
+        <div class="texto">
+            <h1>Encontre o anúncio de uma forma mais rápida utilizando o filtro abaixo</h1>
+        </div>
+        <form [formGroup]="form"
+            style="color: white;border: groove; background: grey; border-radius: 10px; background: white">
+
+            <div class="" style="background: white; padding: 50px 60px 30px 60px">
+                <h3 style="color: grey; text-align: center;margin-bottom: 40px;">Encontre o imóvel ideal para você!
+                </h3>
+
+                <div class="col-lg-12">
+                    <div class="" style="font: -webkit-small-control;">
+                        <div class="row">
+                            <div class="col-lg-5">
+
+                                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
+                                    placeholder="Estado">
+                                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                            <div class="col-lg-7">
+                                <ng-select name="cidades" placeholder="Selecione uma Cidade" style="width: 75%;">
+                                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                                        {{city.nome}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row" style="font: -webkit-small-control;">
+                    <div class="col-lg-6">
+                        <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
+                        <input class="form-control" type="text" placeholder="Busque por Bairro">
+                    </div>
+                    <div class="">
+                        <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
+                        <input class="form-control" type="text" placeholder="Nº de Quartos">
+                    </div>
+
+                </div>
+            </div>
+            <div style="margin-top: 12px; text-align: center">
+                <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
+                    Buscar
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Anúncios em <strong style="color: orangered;"> Destaques</strong></h2>
+            <p>
+                Aqui estão os Anúncios em maiores destaques
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                data-aos-delay="200">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <h4><a href="">Sed ut perspici</a></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                data-aos-delay="300">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <h4><a href="">Magni Dolores</a></h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                data-aos-delay="400">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-layer"></i></div>
+                    <h4><a href="">Nemo Enim</a></h4>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Eu Alugo</h3>
+                    <p>
+                        Avenida Mangará, Jardim Mangará <br>
+                        Santa Fé do Sul, SP 15775-000<br>
+                        Brasil <br><br>
+                        <strong>Celular:</strong> (64) 11234-32123<br>
+                        <strong>Email:</strong> eualugo@hotmail.com<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Anunciar Imóvel</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Encontrar Imóvel</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Nossas redes sociais</h4>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Eu Alugo</span></strong>. Todos os Direitos Reservados
+        </div>
+        <!-- <div class="credits">
+                Designed by <a href="">BootstrapMade</a>
+            </div> -->
+    </div>
+</footer>
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+<div id="preloader"></div>
