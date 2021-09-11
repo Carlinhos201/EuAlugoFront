@@ -1,4 +1,3 @@
-
 <div class="form-content">
     <div class="form-text col-lg-12" style="position: sticky;">
         <h1
@@ -7,39 +6,43 @@
             <strong style="color: orangered;">Eu Alugo</strong>
         </h1>
     </div>
+    <form [formGroup]="formulario" (submit)="SalvarAnuncio()">
     <div style="border: 1px solid orangered;">
-    <div class="form-row">
-        <div class="col-lg-4" style="text-align: center;" id="input">
-            <label for="" style="color: orangered;">Nome Do Proprietário</label>
-            <input type="text" class="form-control" >
+        <div class="form-row">
+            <div class="col-lg-4" style="text-align: center;" id="input">
+                <label for="" style="color: orangered;">Nome Do Proprietário</label>
+                <input type="text" class="form-control" formControlName="proprietario">
+            </div>
+            <!-- <div class="col-lg-3" id="input">
+                <label for="" style="color: orangered;">Nº de Celular</label>
+                <input type="text" class="form-control" mask="(00) 0 0000-0000" formControlName="proprietario">
+            </div> -->
         </div>
-        <div class="col-lg-3" id="input">
-            <label for="" style="color: orangered;">Nº de Celular</label>
-            <input type="text" class="form-control"  mask = " (00) 0 0000-0000">
+        <div class="form-row" style="margin-top: 15px;" id="input">
+            <div class="col-lg-4">
+                <label for="" style="color: orangered;">Logradouro</label>
+                <input type="text" class="form-control" formControlName="logradouro">
+            </div>
+            <div class="col-lg-4">
+                <label for="" style="color: orangered;">Bairro</label>
+                <input type="text" class="form-control" formControlName="bairro">
+            </div>
+
+        </div>
+        <div class="form-row" style="margin-top: 15px;" id="input">
+            <div class="col-lg-4">
+                <label for="" style="color: orangered;">Selecione o tipo de Imóvel</label>
+                <select placeholder="" class="form-control" style="border: 1px solid;" formControlName="tipo">
+                    <option value="Apartamento">Apartamento</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Hotel">Hotel</option>
+                </select>
+            </div>
         </div>
     </div>
-    <div class="form-row" style="margin-top: 15px;" id="input">
-        <div class="col-lg-4">
-            <label for="" style="color: orangered;">Logradouro</label>
-            <input type="text" class="form-control" >
-        </div>
-        <div class="col-lg-4">
-            <label for="" style="color: orangered;">Bairro</label>
-            <input type="text" class="form-control" >
-        </div>
-        
-    </div>
-    <div class="form-row" style="margin-top: 15px;" id="input">
-        <div class="col-lg-4">
-            <label for="" style="color: orangered;">Selecione o tipo de Imóvel</label>
-            <select placeholder="" class="form-control" style="border: 1px solid;">
-            <option>Apartamento</option>
-            <option>Casa</option>
-            <option>Hotel</option>
-        </select>
-        </div>
-    </div>
-    </div>
+    <button type="submit" class="btn btn-success">Salvar
+        Anuncio</button>
+</form>
 </div>
 <!-- </div> -->
 <!-- </main> -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AnunciosService } from '../services/anuncios.service';
 import {CidadesService} from '../services/cidades.service'
 
 @Component({
@@ -13,13 +14,16 @@ export class HomeComponent implements OnInit {
   form?: FormGroup;
   cidades: any = [];
   arrayCidades: any[] = [];
+  arrayAnuncios: any[] = []
   constructor(
     private cidadesService: CidadesService,
     private formBuider: FormBuilder,
+    private anunciosService: AnunciosService
   ) { }
 
   ngOnInit(): void {
     this.Formulario();
+    this.buscarAnuncios();
   }
   Formulario(data?) {
     this.form = this.formBuider.group({
@@ -35,6 +39,15 @@ export class HomeComponent implements OnInit {
       .subscribe((res) => {
        console.log(res)
         this.arrayCidades = res;
+        // this.loadingCidade = false
+      });
+  }
+   buscarAnuncios() {
+    // this.loadingCidade = true
+    let a: any = [];
+     this.anunciosService.getAnuncios().subscribe((res) => {
+       console.log(res)
+        this.arrayAnuncios = res;
         // this.loadingCidade = false
       });
   }
