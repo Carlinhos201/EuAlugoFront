@@ -1,3 +1,6 @@
+
+
+
 .metade{
     width: 40%;
     top: 0;
@@ -70,7 +73,10 @@ body {
   #hero {
     width: 100%;
     height: 80vh;
-    background: khaki;
+    background-image: url('../../assets/img/home-bg-blur.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   #hero .container {
