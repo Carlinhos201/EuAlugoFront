@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
         // this.loadingCidade = false
       });
   }
+  oi
    buscarAnuncios() {
     // this.loadingCidade = true
     let a: any = [];
