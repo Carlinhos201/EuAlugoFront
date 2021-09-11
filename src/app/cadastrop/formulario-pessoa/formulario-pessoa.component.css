@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
@@ -37,7 +35,7 @@ main h2 {
     margin-bottom: 2rem;
     position: relative;
 }
-oi
+
 main h2::before {
     content: '';
     position: absolute;
@@ -214,4 +212,3 @@ form button[type="submit"]:hover {
         -o-animation: fadeIn 2s ease-in-out;
         animation: fadeIn 2s ease-in-out;
         }
->>>>>>> Stashed changes
