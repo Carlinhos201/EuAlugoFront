@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import {AnunciosService} from '../../services/anuncios.service';
 @Component({
   selector: 'app-formulario-anuncio',
@@ -9,10 +10,11 @@ import {AnunciosService} from '../../services/anuncios.service';
 export class FormularioAnuncioComponent implements OnInit {
 
  formulario!: FormGroup;
-
+ usuario: any = JSON.parse(this.authService.getUserLoggedIn());
   constructor(
     private anuncioService: AnunciosService,
     private formBuider: FormBuilder,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class FormularioAnuncioComponent implements OnInit {
   {
     this.formulario = this.formBuider.group({
       id: data ? data.id : '',
+      user_id: data ? data.user_id : this.usuario.user.id,
       proprietario: data ? data.proprietario : '',
       titulo: data ? data.titulo : '',
       logradouro: data ? data.logradouro : '',
@@ -34,7 +37,7 @@ export class FormularioAnuncioComponent implements OnInit {
 
   SalvarAnuncio()
   {
-    this.anuncioService.save(this.formulario.value).subscribe((data)=>{
+    this.anuncioService.save(this.formulario.value, this.usuario).subscribe((data)=>{
       console.log("Salvo");
     })
   }

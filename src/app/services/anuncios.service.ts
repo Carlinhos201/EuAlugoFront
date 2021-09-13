@@ -1,16 +1,20 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnunciosService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
-  save(data): Observable<any> {
-    return this.http.post('http://localhost:8000/api/anuncio', data);
+  save(data, token): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': token["token_type"] + " " + token.access_token
+    });
+    return this.http.post('http://localhost:8000/api/anuncio', data, {headers});
   }
   getAnuncios(): Observable<any[]>{
 
