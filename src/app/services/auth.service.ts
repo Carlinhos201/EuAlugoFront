@@ -29,6 +29,27 @@ export class AuthService {
         return token;
       }));
   }
+  logout() {
+    console.log("sair");
+    return this.http.get(`http://localhost:8000/api/auth/logout`, { headers: this.userToken() }).subscribe(res => {
+      localStorage.removeItem("_token");
+      this.isLoggedIn = false;
+      this.router.navigate(['']);
+    }, error => {
+      localStorage.removeItem("_token");
+      this.isLoggedIn = false;
+      this.router.navigate(['']);
+    })
+    // .pipe(
+    //   map(data => {
+    //     console.log(data);
+    //     localStorage.removeItem("_token");
+    //     this.isLoggedIn = false;
+    //     this.router.navigate(['/login']);
+    //     // return data;
+    //   })
+    // )
+  }
   getUserLoggedIn() {
     return localStorage.getItem("_token");
   }

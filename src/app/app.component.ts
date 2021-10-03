@@ -20,5 +20,8 @@ export class AppComponent {
   pegarUsuario(){
     this.token = JSON.parse(this.authService.getUserLoggedIn())
   }
+  logout() {
+    this.authService.logout();
+  }
 }
 
