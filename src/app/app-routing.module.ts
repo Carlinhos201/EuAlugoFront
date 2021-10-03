@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormularioAnuncioComponent } from './Anuncios/formulario-anuncio/formulario-anuncio.component';
+import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.component';
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'criar-anuncio', component: FormularioAnuncioComponent},
   {path: 'cadastro', component: FormularioPessoaComponent},
+  {path: 'anuncios', component: ListaAnuncioComponent},
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
 ];
 

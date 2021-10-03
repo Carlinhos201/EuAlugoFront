@@ -125,7 +125,7 @@
 </div>
 <router-outlet></router-outlet> -->
 <section id="hero" class="d-flex align-items-center">
-oi
+    oi
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
@@ -134,10 +134,10 @@ oi
                 <h2>O lugar ideal para você encontrar e anuncionar seu Imóvel</h2>
                 <div class="row">
                     <div class="d-lg-flex">
-                        <a href="" class="btn-get-started scrollto">Quero Anunciar</a>
+                        <a href="criar-anuncio" class="btn-get-started scrollto">Quero Anunciar</a>
                     </div>
                     <div class="d-lg-flex">
-                        <a href="" class="btn-get-started scrollto">Quero Alugar</a>
+                        <a href="anuncios" class="btn-get-started scrollto" >Quero Alugar</a>
                     </div>
                 </div>
             </div>
@@ -211,17 +211,22 @@ oi
                 Aqui estão os Anúncios em maiores destaques
             </p>
         </div>
-
+       
         <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <div class="col-lg-9">
+                <div class="row">
+
+                    <div class="card" style="width: 18rem;" *ngFor="let data of arrayAnuncios">
+                        <img  class="card-img-top" src="{{data.imagem}}" width="320" height="205">
+                        <div class="card-body">
+                            <h5 class="card-title">{{data?.titulo}}</h5>
+                            <p class="card-text">{{data?.descricao}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="200">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-file"></i></div>
@@ -246,7 +251,7 @@ oi
                     <h4><a href="">Nemo Enim</a></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

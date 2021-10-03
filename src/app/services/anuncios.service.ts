@@ -10,11 +10,11 @@ export class AnunciosService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  save(data, token): Observable<any> {
+  save(data: any, token): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': token["token_type"] + " " + token.access_token
     });
-    return this.http.post('http://localhost:8000/api/anuncio', data, {headers});
+    return this.http.post<any>('http://localhost:8000/api/anuncio', data, {headers});
   }
   getAnuncios(): Observable<any[]>{
 

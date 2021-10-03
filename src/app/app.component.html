@@ -13,15 +13,23 @@
             
             <li><a href="/">Teste 2</a></li>
             <li><a href="/">Teste 3</a></li>
-            <li>
+            <!-- <li>
                 <a href="login" >{{token?.user.name ? token?.user.name  : 'Entrar'}}</a>
                 <form action="" class="logout" method="POST" style="display: none">
                     
                 </form>
-            </li>
-            <!-- {{-- <li class="nav-item">
-                <span style="color: white" class="nav-link">{{auth()->user()->nome}}</span>
-            </li>  -->
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="login" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{token?.user.name ? token?.user.name  : 'Entrar'}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="token" style="padding: 10px 10px 10px 10px;">
+                  <a class="dropdown-item" href="#">Meu Perfil</a>
+                  <a class="dropdown-item" href="#">Esqueci a Senha</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Sair</a>
+                </div>
+              </li>
         </ul>
 
     </nav>
