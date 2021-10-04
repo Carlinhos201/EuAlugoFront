@@ -1,3 +1,14 @@
+*{
+   font-family: "Poppins", sans-serif;
+}
+
+.background-img {
+  width: 100%;
+  height: 93%;
+  position: absolute;
+  overflow: auto; overflow: hidden;
+}
+
 .metade{
     width: 40%;
     top: 0;
@@ -8,9 +19,8 @@
 }
 
 .metade .btn{
-    font-family: "Jost", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 10px 28px 11px 28px;
@@ -22,7 +32,6 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
     color: #444444;
   }
   
@@ -36,7 +45,6 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Jost", sans-serif;
   }
 
   .back-to-top {
@@ -70,19 +78,23 @@ body {
   #hero {
     width: 100%;
     height: 80vh;
-    background: khaki;
+    position: relative;
+    background-image: url("../../assets/img/home-bg-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
-  oi
+
   #hero .container {
     padding-top: 72px;
   }
   
   #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 48px;
+    font-size: 45px;
     font-weight: 700;
     line-height: 56px;
-    color: #37517e;
+    color: black;
   }
   
   #hero h2 {
@@ -492,4 +504,53 @@ body {
 .services .icon-box:hover h4 a {
   color: #47b2e4;
 }
-  
+
+ /* animacao container */
+@-webkit-keyframes container {
+  0% { opacity: 0; }
+  100% { opacity: 1; } 
+  }
+  @-moz-keyframes container {
+  0% { opacity: 0;}
+  100% { opacity: 1; }
+  }
+  @-o-keyframes container {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  @keyframes container {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+
+  .container {
+      -webkit-animation: container 2s ease-in-out;
+      -moz-animation: container 2s ease-in-out;
+      -o-animation: container 2s ease-in-out;
+      animation: container 2s ease-in-out;
+      }
+
+/* animacao encontrar imovel */
+      @-webkit-keyframes form {
+        0% { opacity: 0; }
+        100% { opacity: 1; } 
+        }
+        @-moz-keyframes form {
+        0% { opacity: 0;}
+        100% { opacity: 1; }
+        }
+        @-o-keyframes form {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+        }
+        @keyframes form {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+        }
+      
+        .form {
+            -webkit-animation: form 2s ease-in-out;
+            -moz-animation: form 2s ease-in-out;
+            -o-animation: form 2s ease-in-out;
+            animation: form 2s ease-in-out;
+            }

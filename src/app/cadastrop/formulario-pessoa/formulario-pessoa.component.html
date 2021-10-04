@@ -1,39 +1,37 @@
 <div class="background-img">
     <img src="../../assets/img/login-bg.jpg" alt="" width="2200" height="1080" />
 </div>
-oi
 <div class="fadeIn">
     <main class="container">
         <h2>Criar minha conta</h2>
 
         <form [formGroup]="formulario">
             <div class="input-field">
-                <input type="text" name="name" id="name" formControlName="name" placeholder="Nome e Sobrenome" />
-
-                <div class="underline"></div>
+                <input type="text" name="name" id="name" formControlName="name" placeholder="*Nome e Sobrenome" />
+            <div class="underline"></div>
             </div>
+
             <div class="input-field2" style="margin-bottom: 1.5rem;">
-                <input type="text" name="email" id="email" formControlName="email" placeholder="Digite seu email" />
-
+                <input type="text" name="email" id="email" formControlName="email" placeholder="*Digite seu email" />
                 <div class="underline"></div>
             </div>
+
             <div class="input-field" style="margin-bottom: 1.5rem;">
-                <input type="password" name="password" formControlName="password" id="password" placeholder="Digite sua senha" />
-
+                <input type="password" name="password" formControlName="password" id="password" placeholder="*Digite sua senha" />
                 <div class="underline"></div>
             </div>
+
             <div class="input-field" style="margin-bottom: 1.5rem;">
-                <input type="password" name="password2"  id="password2" placeholder="Confirme sua Senha" />
-
+                <input type="password" name="password2"  id="password2" placeholder="*Confirme sua Senha" />
                 <div class="underline"></div>
             </div>
+
             <div class="input-field" style="margin-bottom: 1.5rem;">
-                <input type="tel" name="telefone" formControlName="telefone" id="telefone" placeholder="Digite seu Telefone (Opcional)" />
-
+                <input type="tel" name="telefone" formControlName="telefone" id="telefone" placeholder="Telefone (Opcional)" />
                 <div class="underline"></div>
             </div>
-            <div>
-                <p>Ao me cadastrar eu aceito os <a href="">Termos de Uso</a> e <a href="">Política de privacidade</a> do Grupo Eu Alugo e afirmo ter 18 anos ou mais.</p>
+            <div class="infos">
+                <p>Ao se cadastrar vocë está aceitando os <a href="">Termos de Uso</a> e <a href="">Política de privacidade</a> do Grupo Eu Alugo e afirma ter 18 anos ou mais.</p>
             </div>
             <button type="submit" >Cadastrar</button>
 

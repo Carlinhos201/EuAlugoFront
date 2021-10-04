@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "Eualugoweb"
+  "defaultProject": "Eualugoweb",
+  "cli": {
+    "analytics": "f3be6fe8-91fa-4f7e-9030-b8b7c64f6ee9"
+  }
 }
