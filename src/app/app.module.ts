@@ -15,6 +15,7 @@ import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.co
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
 import  { NgxMaskModule }  from  'ngx-mask';
 import {MatIconModule} from '@angular/material/icon'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatIconModule} from '@angular/material/icon'
     BrowserAnimationsModule,
     NgSelectModule,
     NgxMaskModule.forRoot(),
+    SweetAlert2Module.forRoot()
     // MatIconModule
   ],
   providers: [

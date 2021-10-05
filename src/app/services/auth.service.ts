@@ -18,19 +18,12 @@ export class AuthService {
   autenticacao(user: any): Observable<any> {
     return this.http.post(`http://localhost:8000/api/auth/login`, { email: user.email.trim(), password: user.password.trim() })
       .pipe(map((token: any) => {
-        // console.log(token);
-        // if (token.users || true) {
           this.setTokenLoggedIn(token)
           this.router.navigate(['']);
-        // }
-        // else {
-         
-        // }
         return token;
       }));
   }
   logout() {
-    console.log("sair");
     return this.http.get(`http://localhost:8000/api/auth/logout`, { headers: this.userToken() }).subscribe(res => {
       localStorage.removeItem("_token");
       this.isLoggedIn = false;
@@ -40,15 +33,6 @@ export class AuthService {
       this.isLoggedIn = false;
       this.router.navigate(['']);
     })
-    // .pipe(
-    //   map(data => {
-    //     console.log(data);
-    //     localStorage.removeItem("_token");
-    //     this.isLoggedIn = false;
-    //     this.router.navigate(['/login']);
-    //     // return data;
-    //   })
-    // )
   }
   getUserLoggedIn() {
     return localStorage.getItem("_token");
@@ -71,4 +55,7 @@ export class AuthService {
   setTokenLoggedIn(token: any) {
     localStorage.setItem('_token', `${JSON.stringify(token)}`)
   }
+  register(data): Observable<any> {
+    return this.http.post<any>(`http://localhost:8000/api/register`, data);
+}
 }
