@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-pessoa',
@@ -36,7 +35,7 @@ export class FormularioPessoaComponent implements OnInit {
     //   pessoa_id: this.user.pessoa.id
     // })
       this.authService.register(this.formulario.value).subscribe(res => {
-      Swal.fire("Salvo", "Salvo com sucesso", "success")
+      // Swal.fire("Salvo", "Salvo com sucesso", "success")
     }, error => {
       // Swal.fire("Ops, deu erro!", "Não foi possível salvar", "error")
     })

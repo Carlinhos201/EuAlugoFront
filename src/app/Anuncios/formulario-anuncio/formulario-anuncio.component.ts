@@ -1,15 +1,17 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AnunciosService } from '../../services/anuncios.service';
+import { MatStepper } from '@angular/material/stepper';
 @Component({
   selector: 'app-formulario-anuncio',
   templateUrl: './formulario-anuncio.component.html',
   styleUrls: ['./formulario-anuncio.component.css']
 })
 export class FormularioAnuncioComponent implements OnInit {
-  // documentos: any = [];
-  // @ViewChild("fileInput") fileInput: ElementRef;
+  isLinear = false ;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
   fileToUpload: any = [];
   formularioDocs: FormGroup;
   formulario!: FormGroup;
@@ -22,10 +24,18 @@ export class FormularioAnuncioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.Formulario();
     this.formularioDocs = this.formBuider.group({
         arquivos: this.formBuider.array([]),
       })
+      this.firstFormGroup = this.formBuider.group({
+        firstCtrl: ['', Validators.required]
+      });
+      this.secondFormGroup = this.formBuider.group({
+        secondCtrl: ['', Validators.required]
+      });
+    
   }
 
   Formulario(data?) {
