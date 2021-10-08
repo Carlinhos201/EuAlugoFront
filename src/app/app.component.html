@@ -9,10 +9,10 @@
             <div class="line3"></div>
         </div>
         <ul class="nav-list">
-            <li><a href="cadastro">Teste 1</a></li>
+            <li><a href="login">Entrar</a></li>
             
-            <li><a href="/">Teste 2</a></li>
-            <li><a href="/">Teste 3</a></li>
+            <li><a href="cadastro">Criar Conta</a></li>
+            <li><a href="/">Contato</a></li>
             <!-- <li>
                 <a href="login" >{{token?.user.name ? token?.user.name  : 'Entrar'}}</a>
                 <form action="" class="logout" method="POST" style="display: none">
@@ -21,10 +21,10 @@
             </li> -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="login" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{token?.user.name ? token?.user.name  : 'Entrar'}}
+                    {{token?.user.name ? token?.user.name  : 'Minha Conta'}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="token" style="padding: 10px 10px 10px 10px;">
-                  <a class="dropdown-item" href="#">Meu Perfil</a>
+                  <a class="dropdown-item" href="#">Perfil</a>
                   <a class="dropdown-item" href="#">Esqueci a Senha</a>
                   <div class="dropdown-divider"></div>
                   <button class="dropdown-item" (click)="logout()">Sair</button>
