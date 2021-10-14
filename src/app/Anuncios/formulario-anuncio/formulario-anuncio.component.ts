@@ -70,6 +70,7 @@ export class FormularioAnuncioComponent implements OnInit {
 
       if (element.file != null) {
       this.imagem.push({
+        id: "",
         imagem: element,
         nome: "",
         caminho: "",
@@ -85,23 +86,30 @@ export class FormularioAnuncioComponent implements OnInit {
     return this.formBuider.group(data);
   }
   detectFiles(event) {
-    let files = event.target.files;
-    if (files) {
-      for (let file of files) {
-        let reader = new FileReader();
-        reader.onload = (e: any) => {
-          this.photos.push(
-            this.createItem({ file })
-          );
-        }
+    if (event.target.files.length) {
+      for (var i = 0; i < event.target.files.length; i++) {
+        console.log(event.target.files[i]);
+        const file = event.target.files[i];
+        console.log("FILE", file)
+        const reader = new FileReader();
         reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.photos.push(
+            this.createItem({
+              name: file.name,
+              file: reader.result,
+            })
+          );
+
+        };
       }
+
     }
   }
 
   SalvarAnuncio() {
     this.formulario.value.imagem = this.imagem
-    console.log(this.formulario.value.imagem)
+    console.log(this.formulario.value)
       this.anuncioService.save(this.formulario.value, this.usuario).subscribe(res => {
         console.log(res)
       })

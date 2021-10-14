@@ -14,18 +14,14 @@ export class AnunciosService {
     const headers = new HttpHeaders({
       'Authorization': token["token_type"] + " " + token.access_token
     });
-    const formData: FormData = new FormData();
-
-    formData.append('data', JSON.stringify(data));
-
-    for (let i = 0; i< data.imagem.length; i++)  {
-      formData.append('imagem', data.imagem[i].imagem.file, data.imagem[i].name)
-    }
  
-    return this.http.post<any>('http://localhost:8000/api/anuncio', formData, {headers});
+    return this.http.post<any>('http://localhost:8000/api/anuncio', data, {headers});
   }
   getAnuncios(): Observable<any[]>{
-
     return this.http.get<any[]>(`http://localhost:8000/api/anuncios`);
+  }
+
+  getImagensHome(): Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8000/api/imagens`);
   }
 }

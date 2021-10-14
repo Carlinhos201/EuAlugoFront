@@ -1,4 +1,4 @@
-<!-- <div class="form-content">
+<div class="form-content">
   <div class="form-text col-lg-12" style="position: sticky">
     <h1 style="
         font-size: 3rem;
@@ -13,7 +13,7 @@
       <strong style="color: orangered">Eu Alugo</strong>
     </h1>
   </div>
-  <form [formGroup]="formulario" (submit)="SalvarAnuncio()" enctype="multipart/form-data">
+  <form [formGroup]="formulario"  enctype="multipart/form-data">
 
     <div class="card text-center">
       <div class="card-body">
@@ -44,7 +44,7 @@
               </select>
             </div>
           </div>
-          <button type="submit" class="btn btn-success">
+          <button type="button" (click)="SalvarAnuncio()" class="btn btn-success">
             Salvar Anuncio
           </button>
           <div class="custom-file" [formGroup]="formularioDocs">
@@ -70,7 +70,7 @@
                     <td>{{ i + 1 }}</td>
                     <td>
                       <i class="fas fa-file-pdf"></i>
-                      {{ arquivo?.imagem?.file?.name }}
+                      {{ arquivo?.imagem?.name }}
                     </td>
                   </tr>
                 </tbody>
@@ -80,9 +80,10 @@
         </div>
       </div>
     </div>
+   
   </form>
-</div> -->
-<div class="form-text col-lg-12" style="position: sticky">
+</div>
+<!-- <div class="form-text col-lg-12" style="position: sticky">
   <h1 style="
       font-size: 3rem;
       line-height: 1.17;
@@ -97,14 +98,20 @@
   </h1>
 </div>
 <div>
-<mat-vertical-stepper style="text-align-last: center;">
+<mat-vertical-stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel> <mat-icon>assignment_ind</mat-icon>Dados Pessoais</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      <div class="row">
+      <mat-form-field appearance="fill" style="right: 10px;" class="col-lg-4">
+        <mat-label>Nome do Proprietário</mat-label>
+        <input matInput placeholder="Digite seu nome completo" formControlName="firstCtrl" required class="form-control">
       </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Número de Celular</mat-label>
+        <input matInput placeholder="Digite seu CPF" formControlName="firstCtrl" required type="tel" class="form-control">
+      </mat-form-field>
+    </div>
       <div>
         <button mat-button matStepperNext>Next</button>
       </div>
@@ -112,7 +119,7 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel> <mat-icon>location_on</mat-icon> Endereço</ng-template>
       <mat-form-field appearance="fill">
         <mat-label>Address</mat-label>
         <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
@@ -133,7 +140,7 @@
     </div>
   </mat-step>
 </mat-vertical-stepper>
-</div>
+</div> -->
 
 <!-- </div> -->
 <!-- </main> -->
