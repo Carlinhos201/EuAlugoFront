@@ -1,4 +1,4 @@
-<div class="form-content">
+<!-- <div class="form-content">
   <div class="form-text col-lg-12" style="position: sticky">
     <h1 style="
         font-size: 3rem;
@@ -82,7 +82,8 @@
     </div>
    
   </form>
-</div>
+</div> -->
+
 <!-- <div class="form-text col-lg-12" style="position: sticky">
   <h1 style="
       font-size: 3rem;
@@ -121,13 +122,59 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel> <mat-icon>location_on</mat-icon> Endereço</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
+        <mat-label>Rua</mat-label>
+        <input matInput placeholder="Rua Fulano" required type="text" class="form-control">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Bairro</mat-label>
+        <input matInput placeholder="Bairro América"  required type="text" class="form-control">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Número</mat-label>
+        <input matInput placeholder="00000"  required type="text" class="form-control">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>CEP</mat-label>
+        <input matInput placeholder="00000 - 000"  required type="text" class="form-control">
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="tree">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel> <mat-icon>location_on</mat-icon> Imagens</ng-template>
+      <div class="custom-file" [formGroup]="formularioDocs" style="height: 300px;">
+        <input type="file" class="form-control" id="files" (change)="detectFiles($event)" name="files"
+          multiple />
+        <label class="custom-file-label" for="customFile">Pesquisar</label>
+
+        <div class="col-lg-3" style="margin-top: 25px">
+          <button class="btn btn-info" (click)="insereArquivo()">
+            Inserir Arquivos
+          </button>
+        </div>
+        <div class="datatable">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Arquivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let arquivo of imagem; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <i class="fas fa-file-pdf"></i>
+                  {{ arquivo?.imagem?.name }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </form>
   </mat-step>
@@ -146,3 +193,364 @@
 <!-- </main> -->
 
 <!-- </div> -->
+
+<body style="background: lightgray;">
+  <div class="form-text col-lg-12" style="position: sticky">
+    <h1 style="
+      font-size: 3rem;
+      line-height: 1.17;
+      margin-bottom: 64px;
+      margin-top: 60px;
+      margin-left: 500px;
+      display: grid;
+      color: black;
+    ">
+      Anuncie rápido e prático no
+      <strong style="color: orangered">Eu Alugo</strong>
+    </h1>
+  </div>
+  <div class="card form" style="padding: 40px 40px 40px 40px; border: 1px solid orangered; margin: 50px;">
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title">Cadastro de Anúncio</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formulario">
+          <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">assignment</mat-icon>
+                Informações do Proprietário
+              </ng-template>
+              <div class="linha-editor" style="margin-top: 30px; ">
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-7">
+                        <div class="form-group">
+                          <label for="validate-text">Nome<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o nome do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Nome" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Nascimento<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a data de nascimento do Proprietário"></i></label>
+                          <div class="">
+                            <input type="date" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                          <label for="validate-text">CPF<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o CPF do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" mask="000.000.000-00" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-7">
+                        <div class="form-group">
+                          <label for="validate-text">E-mail<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o e-mail do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required
+                              placeholder="Informe o e-mail do Proprietário" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                          <label for="validate-text">Telefone<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o número de telefone do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" mask="(00) 0000-0000" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                          <label for="validate-text">Celular<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o número de celular do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" mask="(00) 0 0000-0000" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">home</mat-icon>
+                Detalhes do Imóvel
+              </ng-template>
+              <div class="linha-editor" style="margin-top: 30px; ">
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Quantidade de Quartos<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a quantidade de quartos"></i></label>
+                          <div class="">
+                            <input type="number" class="form-control" required
+                              placeholder="Informe a quantidade de quartos" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Quantidade de Banheiros<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a quantidade de banheiros"></i></label>
+                          <div class="">
+                            <input type="number" class="form-control" required
+                              placeholder="Informe a quantidade de banheiros" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Quantidade de Suítes<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a quantidade de suítes"></i></label>
+                          <div class="">
+                            <input type="number" class="form-control" required
+                              placeholder="Informe a quantidade de suítes" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Quantidade de Garagens<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a quantidade de Garagens"></i></label>
+                          <div class="">
+                            <input type="number" class="form-control" required
+                              placeholder="Informe a quantidade de Garagens" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Andar do Imóvel<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o Andar do Imóvel"></i></label>
+                          <div class="">
+                            <input type="number" class="form-control" required
+                              placeholder="Informe o Andar do Imóvel" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Tipo do Imóvel<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Selecione o tipo de Imóvel"></i></label>
+                          <div class="">
+                            <select class="form-control" formControlName="tipo">
+                              <option value="Apartamento">Apartamento</option>
+                              <option value="Casa">Casa</option>
+                              <option value="Hotel">Hotel</option>
+                              <option value="Casa de Condomínio">Casa de Condomínio</option>
+                              <option value="Casa de Vila">Casa de Vila</option>
+                              <option value="Cobertura">Cobertura</option>
+                              <option value="Fazenda/Sítio/Chácara">Fazenda/Sítio/Chácara</option>
+                              <option value="Flat">Flat</option>
+                              <option value="Sobrado">Sobrado</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Descrição<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above" matTooltip=""></i></label>
+                          <div class="">
+                            <textarea name="" id="" maxlength="3000" rows="4" class="form-control"
+                              style="height: auto;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">place</mat-icon>
+                Endereço do Imóvel
+              </ng-template>
+              <div class="linha-editor" style="margin-top: 30px; ">
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">CEP<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o CEP"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required mask="00000-000" />
+                            <span><a href="https://buscacepinter.correios.com.br/app/endereco/"
+                                style="color: orangered;font-weight: bold;" target="blank">Não sei meu CEP</a></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Bairro<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o Bairro"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe o Bairro" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Rua<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a Rua"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Número<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above" matTooltip="N°"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                        <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(formulario.value.uf)"
+                          placeholder="Estado">
+                          <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                          </ng-option>
+                        </ng-select>
+                      </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                        <ng-select name="cidades" placeholder="Selecione uma Cidade">
+                          <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                            {{city.nome}}
+                          </ng-option>
+                        </ng-select>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">local_see</mat-icon>
+                Imagens
+              </ng-template>
+              <div class="linha-editor" style="margin-top: 30px; ">
+                <div class="form-row">
+                  <div class="col-lg-9">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">CEP<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o CEP"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required mask="00000-000" />
+                            <span><a href="https://buscacepinter.correios.com.br/app/endereco/"
+                                style="color: orangered;font-weight: bold;" target="blank">Não sei meu CEP</a></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Bairro<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o Bairro"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe o Bairro" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Rua<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a Rua"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Número<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above" matTooltip="N°"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          <div class="card-footer float-right">
+            <button type="submit" class="btn btn-primary" style="margin: 5px;">Salvar
+              Anúncio</button>
+            <button type="button" class="btn btn-secondary">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

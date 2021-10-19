@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { AnunciosService } from '../../services/anuncios.service';
 import { MatStepper } from '@angular/material/stepper';
+import { CidadesService } from 'src/app/services/cidades.service';
 @Component({
   selector: 'app-formulario-anuncio',
   templateUrl: './formulario-anuncio.component.html',
@@ -12,13 +13,18 @@ export class FormularioAnuncioComponent implements OnInit {
   isLinear = false ;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  tree: FormGroup;
   fileToUpload: any = [];
   formularioDocs: FormGroup;
+  estados: Array<string> = this.cidadeService.estados
+  cidades: any = [];
+  arrayCidades: any[] = [];
   formulario!: FormGroup;
   usuario: any = JSON.parse(this.authService.getUserLoggedIn());
   imagem: any = []
   constructor(
     private anuncioService: AnunciosService,
+    private cidadeService: CidadesService,
     private formBuider: FormBuilder,
     private authService: AuthService
   ) { }
@@ -35,7 +41,9 @@ export class FormularioAnuncioComponent implements OnInit {
       this.secondFormGroup = this.formBuider.group({
         secondCtrl: ['', Validators.required]
       });
-    
+      this.tree = this.formBuider.group({
+        secondCtrl: ['', Validators.required]
+      });
   }
 
   Formulario(data?) {
@@ -48,7 +56,7 @@ export class FormularioAnuncioComponent implements OnInit {
       bairro: data ? data.bairro : '',
       tipo: [data ? data.tipo : ''],
       imagem: [data ? data.imagem : []],
-      // ativo: null
+      uf: data ? data.uf : 'Selecione um Estado',
     })
   }
   uploadArquivo(files: FileList) {
@@ -114,5 +122,14 @@ export class FormularioAnuncioComponent implements OnInit {
         console.log(res)
       })
       // }
+    }
+    async buscarCidadesPorUf(uf) {
+      let a: any = [];
+     await  this.cidadeService
+        .getCidadesUf(uf)
+        .subscribe((res) => {
+         console.log(res)
+          this.arrayCidades = res;
+        });
     }
 }
