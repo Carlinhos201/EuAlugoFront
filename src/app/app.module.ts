@@ -58,6 +58,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { ModalPerfilComponent } from './minha-conta/modal-perfil/modal-perfil.component'
+import { ProdutoSingularComponent } from './Anuncios/produto-singular/produto-singular.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { ModalPerfilComponent } from './minha-conta/modal-perfil/modal-perfil.co
     FormularioPessoaComponent,
     MinhaContaComponent,
     ModalPerfilComponent,
+    ProdutoSingularComponent,
     
   ],
   imports: [
