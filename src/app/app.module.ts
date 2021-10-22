@@ -55,7 +55,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import {MatStepperModule} from '@angular/material/stepper';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProdutoSingularComponent } from './Anuncios/produto-singular/produto-singular.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     FormularioAnuncioComponent,
     ListaAnuncioComponent,
     FormularioPessoaComponent,
+    ProdutoSingularComponent,
     
   ],
   imports: [
