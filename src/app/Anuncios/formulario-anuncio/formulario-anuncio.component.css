@@ -1,10 +1,10 @@
-* {
+/* * {
     margin: 0;
     border: 0;
     padding: 0;
     box-sizing: border-box;
     
-}
+} */
 .form-control{
     display: block;
     width: 100%;

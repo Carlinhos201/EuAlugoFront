@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { AnunciosService } from '../../services/anuncios.service';
 import { MatStepper } from '@angular/material/stepper';
 import { CidadesService } from 'src/app/services/cidades.service';
+import Swal from 'sweetalert2';
+import { error } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-formulario-anuncio',
   templateUrl: './formulario-anuncio.component.html',
@@ -50,13 +52,30 @@ export class FormularioAnuncioComponent implements OnInit {
     this.formulario = this.formBuider.group({
       id: data ? data.id : '',
       user_id: data ? data.user_id : this.usuario.user.id,
-      proprietario: data ? data.proprietario : '',
-      titulo: data ? data.titulo : '',
-      logradouro: data ? data.logradouro : '',
-      bairro: data ? data.bairro : '',
-      tipo: [data ? data.tipo : ''],
+      proprietario: [data ? data.proprietario : '', Validators.required],
+      email: data ? data.email : '',
+      data_nasc: data ? data.data_nasc : '',
+      cpf: [data ? data.cpf : '', Validators.required],
+      telefone: data ? data.telefone : '',
+      celular: [data ? data.celular : '', Validators.required],
+      titulo: [data ? data.titulo : '', Validators.required],
+      qtd_quartos: [data ? data.qtd_quartos : 1, Validators.required],
+      qtd_banh: [data ? data.qtd_banh : 1],
+      qtd_suites: [data ? data.qtd_suites : ''],
+      qtd_garag: [data ? data.qtd_garag : ''],
+      numero_andar: data ? data.numero_andar : '',
+      descricao: data ? data.descricao : '',
+      logradouro: [data ? data.logradouro : '', Validators.required],
+      cep: [data ? data.cep : '', Validators.required],
+      numero: [data ? data.numero : '', Validators.required],
+      cidade_id: [data ? data.cidade_id : '', Validators.required],
+      bairro: [data ? data.bairro : '', Validators.required],
+      tipo: [data ? data.tipo : '', Validators.required],
       imagem: [data ? data.imagem : []],
-      uf: data ? data.uf : 'Selecione um Estado',
+      ativo: data ? data.ativo : '',
+      uf: data ? data.uf : '',
+      valor: [data ? data.valor : '', Validators.required]
+      
     })
   }
   uploadArquivo(files: FileList) {
@@ -119,8 +138,12 @@ export class FormularioAnuncioComponent implements OnInit {
     this.formulario.value.imagem = this.imagem
     console.log(this.formulario.value)
       this.anuncioService.save(this.formulario.value, this.usuario).subscribe(res => {
+        Swal.fire("Salvo", "Anúncio salvo com sucesso", "success")
         console.log(res)
-      })
+      }, error => {
+        Swal.fire("Ops, deu erro!", "Não foi possível salvar o anúncio", "error")
+      }
+      )
       // }
     }
     async buscarCidadesPorUf(uf) {

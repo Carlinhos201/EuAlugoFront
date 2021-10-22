@@ -1,0 +1,35 @@
+<h1 mat-dialog-title style="text-align: center;font-weight: bold;font-size: 30px;">
+    Alteração de Dados Pessoais
+</h1>
+<hr style="background: orangered;">
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="usuario">{{data?.name}}</label>
+            <p></p>
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="col-lg-5">
+        <div class="form-group">
+        <label for=""> Nome</label>
+        <div class="input-group">
+            <input type="text" [(ngModel)]="data.name" name="name" class="form-control">
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="form-group">
+        <label for="">E-mail</label>
+        <div class="input-group">
+            <input type="email" [(ngModel)]="data.email" name="email" class="form-control">
+        </div>
+    </div>
+    </div>
+</div>
+    <!-- </form> -->
+</mat-dialog-content>
+<mat-dialog-actions class="float-right">
+    <button class="btn btn-info" style="background: orangered; border: none;" (click)="alterarDados()">Alterar Dados</button>
+    <button mat-button type="button">Fechar</button>
+</mat-dialog-actions>

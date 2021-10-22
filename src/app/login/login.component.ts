@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 import {AuthService} from '../services/auth.service'
 
 @Component({
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
         // this.loading = false;
       },
         error => {
-          // this.loading = false;
+          Swal.fire('Erro', 'Email ou Senha incorretos!', 'error')
           this.formulario.reset();
           this.message = error ? error.error.message : "E-mail e/ou Senha incorretos.";
         });

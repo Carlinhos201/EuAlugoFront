@@ -5,6 +5,7 @@ import { ListaAnuncioComponent } from './Anuncios/lista-anuncio/lista-anuncio.co
 import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formulario-pessoa.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path: 'criar-anuncio', component: FormularioAnuncioComponent},
   {path: 'cadastro', component: FormularioPessoaComponent},
   {path: 'anuncios', component: ListaAnuncioComponent},
-  // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'minhaconta', component:MinhaContaComponent},
 ];
 
 @NgModule({

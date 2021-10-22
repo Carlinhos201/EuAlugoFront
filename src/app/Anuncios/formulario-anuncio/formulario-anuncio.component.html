@@ -1,199 +1,3 @@
-<!-- <div class="form-content">
-  <div class="form-text col-lg-12" style="position: sticky">
-    <h1 style="
-        font-size: 3rem;
-        line-height: 1.17;
-        margin-bottom: 64px;
-        margin-top: 60px;
-        margin-left: 500px;
-        display: grid;
-        color: black;
-      ">
-      Anuncie rápido e prático no
-      <strong style="color: orangered">Eu Alugo</strong>
-    </h1>
-  </div>
-  <form [formGroup]="formulario"  enctype="multipart/form-data">
-
-    <div class="card text-center">
-      <div class="card-body">
-        <div>
-          <div class="form-row">
-            <div class="col-lg-4" style="text-align: center" id="input">
-              <label for="" style="color: orangered">Nome Do Proprietário</label>
-              <input type="text" class="form-control" formControlName="proprietario" />
-            </div>
-          </div>
-          <div class="form-row" style="margin-top: 15px" id="input">
-            <div class="col-lg-4">
-              <label for="" style="color: orangered">Logradouro</label>
-              <input type="text" class="form-control" formControlName="logradouro" />
-            </div>
-            <div class="col-lg-4">
-              <label for="" style="color: orangered">Bairro</label>
-              <input type="text" class="form-control" formControlName="bairro" />
-            </div>
-          </div>
-          <div class="form-row" style="margin-top: 15px" id="input">
-            <div class="col-lg-4">
-              <label for="" style="color: orangered">Selecione o tipo de Imóvel</label>
-              <select placeholder="" class="form-control" style="border: 1px solid" formControlName="tipo">
-                <option value="Apartamento">Apartamento</option>
-                <option value="Casa">Casa</option>
-                <option value="Hotel">Hotel</option>
-              </select>
-            </div>
-          </div>
-          <button type="button" (click)="SalvarAnuncio()" class="btn btn-success">
-            Salvar Anuncio
-          </button>
-          <div class="custom-file" [formGroup]="formularioDocs">
-            <input type="file" class="custom-file-input" id="files" (change)="detectFiles($event)" name="files"
-              multiple />
-            <label class="custom-file-label" for="customFile">Pesquisar</label>
-
-            <div class="col-lg-3" style="margin-top: 25px">
-              <button class="btn btn-info" (click)="insereArquivo()">
-                Inserir Arquivos
-              </button>
-            </div>
-            <div class="datatable">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Arquivo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let arquivo of imagem; let i = index">
-                    <td>{{ i + 1 }}</td>
-                    <td>
-                      <i class="fas fa-file-pdf"></i>
-                      {{ arquivo?.imagem?.name }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-   
-  </form>
-</div> -->
-
-<!-- <div class="form-text col-lg-12" style="position: sticky">
-  <h1 style="
-      font-size: 3rem;
-      line-height: 1.17;
-      margin-bottom: 64px;
-      margin-top: 60px;
-      margin-left: 500px;
-      display: grid;
-      color: black;
-    ">
-    Anuncie rápido e prático no
-    <strong style="color: orangered">Eu Alugo</strong>
-  </h1>
-</div>
-<div>
-<mat-vertical-stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel> <mat-icon>assignment_ind</mat-icon>Dados Pessoais</ng-template>
-      <div class="row">
-      <mat-form-field appearance="fill" style="right: 10px;" class="col-lg-4">
-        <mat-label>Nome do Proprietário</mat-label>
-        <input matInput placeholder="Digite seu nome completo" formControlName="firstCtrl" required class="form-control">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Número de Celular</mat-label>
-        <input matInput placeholder="Digite seu CPF" formControlName="firstCtrl" required type="tel" class="form-control">
-      </mat-form-field>
-    </div>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel> <mat-icon>location_on</mat-icon> Endereço</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Rua</mat-label>
-        <input matInput placeholder="Rua Fulano" required type="text" class="form-control">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Bairro</mat-label>
-        <input matInput placeholder="Bairro América"  required type="text" class="form-control">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Número</mat-label>
-        <input matInput placeholder="00000"  required type="text" class="form-control">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>CEP</mat-label>
-        <input matInput placeholder="00000 - 000"  required type="text" class="form-control">
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="tree">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel> <mat-icon>location_on</mat-icon> Imagens</ng-template>
-      <div class="custom-file" [formGroup]="formularioDocs" style="height: 300px;">
-        <input type="file" class="form-control" id="files" (change)="detectFiles($event)" name="files"
-          multiple />
-        <label class="custom-file-label" for="customFile">Pesquisar</label>
-
-        <div class="col-lg-3" style="margin-top: 25px">
-          <button class="btn btn-info" (click)="insereArquivo()">
-            Inserir Arquivos
-          </button>
-        </div>
-        <div class="datatable">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Arquivo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let arquivo of imagem; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>
-                  <i class="fas fa-file-pdf"></i>
-                  {{ arquivo?.imagem?.name }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button >Reset</button>
-    </div>
-  </mat-step>
-</mat-vertical-stepper>
-</div> -->
-
-<!-- </div> -->
-<!-- </main> -->
-
-<!-- </div> -->
-
 <body style="background: lightgray;">
   <div class="form-text col-lg-12" style="position: sticky">
     <h1 style="
@@ -209,10 +13,25 @@
       <strong style="color: orangered">Eu Alugo</strong>
     </h1>
   </div>
-  <div class="card form" style="padding: 40px 40px 40px 40px; border: 1px solid orangered; margin: 50px;">
+
+  <div class="card form"
+    style="padding: 40px 40px 40px 40px; border: 1px solid orangered; margin: 50px; display: flex;">
     <div class="card card-default">
       <div class="card-header">
+       
         <h3 class="card-title">Cadastro de Anúncio</h3>
+        <div class="row">
+          <div class="col-md-12" style="margin-top: 10px;">
+            <div class="alert alert-warning"
+              style="background: sandybrown;color: currentcolor;text-align: center;padding: 10px 10px 10px 10px;">
+              <button aria-hidden="true" class="close" data-dismiss="alert" type="button" style="color: black; font-weight: bold; font-size: 30px;">
+                ×
+              </button>
+              <span><strong><i class="fas fa-exclamation-triangle"></i> Atenção: </strong> Os campos marcados com
+                <strong style="color: red;">*</strong> são de preenchimento obrigatório.</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="card-body">
         <form [formGroup]="formulario">
@@ -232,17 +51,16 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe o nome do Proprietário"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" required placeholder="Nome" />
+                            <input type="text" class="form-control"  placeholder="Nome" name="proprietario"
+                              formControlName="proprietario"/>
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
-                          <label for="validate-text">Nascimento<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe a data de nascimento do Proprietário"></i></label>
+                          <label>Nascimento</label>
                           <div class="">
-                            <input type="date" class="form-control" />
+                            <input type="date" class="form-control" name="data_nasc" formControlName="data_nasc" />
                           </div>
                         </div>
                       </div>
@@ -252,7 +70,8 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe o CPF do Proprietário"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" mask="000.000.000-00" />
+                            <input type="text" class="form-control" mask="000.000.000-00" name="cpf"
+                              formControlName="cpf" />
                           </div>
                         </div>
                       </div>
@@ -264,22 +83,18 @@
                     <div class="row">
                       <div class="col-lg-7">
                         <div class="form-group">
-                          <label for="validate-text">E-mail<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe o e-mail do Proprietário"></i></label>
+                          <label>E-mail</label>
                           <div class="">
-                            <input type="text" class="form-control" required
-                              placeholder="Informe o e-mail do Proprietário" />
+                            <input type="text" class="form-control"  placeholder="Informe o e-mail do Proprietário" name="email" formControlName="email" />
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-2">
                         <div class="form-group">
-                          <label for="validate-text">Telefone<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe o número de telefone do Proprietário"></i></label>
+                          <label>Telefone</label>
                           <div class="">
-                            <input type="text" class="form-control" mask="(00) 0000-0000" />
+                            <input type="text" class="form-control" mask="(00) 0000-0000" formControlName="telefone"
+                              name="telefone" />
                           </div>
                         </div>
                       </div>
@@ -289,7 +104,8 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe o número de celular do Proprietário"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" mask="(00) 0 0000-0000" />
+                            <input type="text" class="form-control" mask="(00) 0 0000-0000" formControlName="celular"
+                              name="celular" />
                           </div>
                         </div>
                       </div>
@@ -307,14 +123,37 @@
                 <div class="form-row">
                   <div class="col-lg-9">
                     <div class="row">
+                      <div class="col-lg-2">
+                        <div class="form-group">
+                          <label for="validate-text">titulo<span class="text-danger"><strong>* </strong></span><i
+                              class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe o número de titulo do Proprietário"></i></label>
+                          <div class="">
+                            <input type="text" class="form-control" mask="(00) 0 0000-0000" formControlName="titulo"
+                              name="titulo" />
+                          </div>
+                        </div>
+                      </div>
                       <div class="col-lg-3">
                         <div class="form-group">
                           <label for="validate-text">Quantidade de Quartos<span class="text-danger"><strong>*
                               </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe a quantidade de quartos"></i></label>
                           <div class="">
-                            <input type="number" class="form-control" required
-                              placeholder="Informe a quantidade de quartos" />
+                            <input type="number" class="form-control" 
+                              placeholder="Informe a quantidade de quartos" formControlName="qtd_quartos"
+                              name="qtd_quartos" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group">
+                          <label for="validate-text">Valor<span class="text-danger"><strong>*
+                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
+                              matTooltip="Informe a quantidade de quartos"></i></label>
+                          <div class="">
+                            <input type="tel" class="form-control" 
+                              placeholder="Informe a quantidade de quartos" currencyMask formControlName="valor" name="valor" />
                           </div>
                         </div>
                       </div>
@@ -324,30 +163,29 @@
                               </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe a quantidade de banheiros"></i></label>
                           <div class="">
-                            <input type="number" class="form-control" required
-                              placeholder="Informe a quantidade de banheiros" />
+                            <input type="number" class="form-control" 
+                              placeholder="Informe a quantidade de banheiros" formControlName="qtd_banh"
+                              name="qtd_banh" />
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
-                          <label for="validate-text">Quantidade de Suítes<span class="text-danger"><strong>*
-                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe a quantidade de suítes"></i></label>
+                          <label>Quantidade de Suítes</label>
                           <div class="">
-                            <input type="number" class="form-control" required
-                              placeholder="Informe a quantidade de suítes" />
+                            <input type="number" class="form-control"
+                              placeholder="Informe a quantidade de suítes" formControlName="qtd_suites"
+                              name="qtd_suites" />
                           </div>
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
-                          <label for="validate-text">Quantidade de Garagens<span class="text-danger"><strong>*
-                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe a quantidade de Garagens"></i></label>
+                          <label>Quantidade de Garagens</label>
                           <div class="">
-                            <input type="number" class="form-control" required
-                              placeholder="Informe a quantidade de Garagens" />
+                            <input type="number" class="form-control"
+                              placeholder="Informe a quantidade de Garagens" formControlName="qtd_garag"
+                              name="qtd_garag" />
                           </div>
                         </div>
                       </div>
@@ -359,12 +197,10 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <div class="form-group">
-                          <label for="validate-text">Andar do Imóvel<span class="text-danger"><strong>*
-                              </strong></span><i class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe o Andar do Imóvel"></i></label>
+                          <label>Andar do Imóvel</label>
                           <div class="">
-                            <input type="number" class="form-control" required
-                              placeholder="Informe o Andar do Imóvel" />
+                            <input type="number" class="form-control" placeholder="Informe o Andar do Imóvel"
+                              formControlName="numero_andar" name="numero_andar" />
                           </div>
                         </div>
                       </div>
@@ -396,11 +232,10 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <div class="form-group">
-                          <label for="validate-text">Descrição<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above" matTooltip=""></i></label>
+                          <label>Descrição</label>
                           <div class="">
-                            <textarea name="" id="" maxlength="3000" rows="4" class="form-control"
-                              style="height: auto;"></textarea>
+                            <textarea name="descricao" formControlName="descricao" id="" maxlength="3000" rows="4"
+                              class="form-control" style="height: auto;"></textarea>
                           </div>
                         </div>
                       </div>
@@ -424,7 +259,8 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe o CEP"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" required mask="00000-000" />
+                            <input type="text" class="form-control"  mask="00000-000" formControlName="cep"
+                              name="cep" />
                             <span><a href="https://buscacepinter.correios.com.br/app/endereco/"
                                 style="color: orangered;font-weight: bold;" target="blank">Não sei meu CEP</a></span>
                           </div>
@@ -436,7 +272,8 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe o Bairro"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe o Bairro" />
+                            <input type="text" class="form-control"  placeholder="Informe o Bairro"
+                              formControlName="bairro" name="bairro" />
                           </div>
                         </div>
                       </div>
@@ -446,7 +283,8 @@
                               class="fas fa-info-circle" matTooltipPosition="above"
                               matTooltip="Informe a Rua"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                            <input type="text" class="form-control"  placeholder="Informe a Rua"
+                              formControlName="logradouro" name="logradouro" />
                           </div>
                         </div>
                       </div>
@@ -455,7 +293,8 @@
                           <label for="validate-text">Número<span class="text-danger"><strong>* </strong></span><i
                               class="fas fa-info-circle" matTooltipPosition="above" matTooltip="N°"></i></label>
                           <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
+                            <input type="text" class="form-control"  placeholder="Informe a Rua"
+                              formControlName="numero" name="numero" />
                           </div>
                         </div>
                       </div>
@@ -467,21 +306,21 @@
                     <div class="row">
                       <div class="col-lg-2">
                         <div class="form-group">
-                        <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(formulario.value.uf)"
-                          placeholder="Estado">
-                          <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
-                          </ng-option>
-                        </ng-select>
-                      </div>
+                          <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(formulario.value.uf)"
+                            placeholder="Estado">
+                            <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                            </ng-option>
+                          </ng-select>
+                        </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
-                        <ng-select name="cidades" placeholder="Selecione uma Cidade">
-                          <ng-option *ngFor="let city of arrayCidades" [value]="city">
-                            {{city.nome}}
-                          </ng-option>
-                        </ng-select>
-                      </div>
+                          <ng-select name="cidades" placeholder="Selecione uma Cidade" formControlName="cidade_id">
+                            <ng-option *ngFor="let city of arrayCidades" [value]="city.id">
+                              {{city.nome}}
+                            </ng-option>
+                          </ng-select>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -493,59 +332,42 @@
                 <mat-icon class="example-tab-icon">local_see</mat-icon>
                 Imagens
               </ng-template>
-              <div class="linha-editor" style="margin-top: 30px; ">
-                <div class="form-row">
-                  <div class="col-lg-9">
-                    <div class="row">
-                      <div class="col-lg-3">
-                        <div class="form-group">
-                          <label for="validate-text">CEP<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe o CEP"></i></label>
-                          <div class="">
-                            <input type="text" class="form-control" required mask="00000-000" />
-                            <span><a href="https://buscacepinter.correios.com.br/app/endereco/"
-                                style="color: orangered;font-weight: bold;" target="blank">Não sei meu CEP</a></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3">
-                        <div class="form-group">
-                          <label for="validate-text">Bairro<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe o Bairro"></i></label>
-                          <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe o Bairro" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3">
-                        <div class="form-group">
-                          <label for="validate-text">Rua<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above"
-                              matTooltip="Informe a Rua"></i></label>
-                          <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3">
-                        <div class="form-group">
-                          <label for="validate-text">Número<span class="text-danger"><strong>* </strong></span><i
-                              class="fas fa-info-circle" matTooltipPosition="above" matTooltip="N°"></i></label>
-                          <div class="">
-                            <input type="text" class="form-control" required placeholder="Informe a Rua" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="linha-editor" style="margin-top: 30px; padding: 0 40px 90px;">
+                <div class="custom-file" [formGroup]="formularioDocs">
+                  <input type="file" class="custom-file-input" id="files" (change)="detectFiles($event)" name="files"
+                    multiple />
+                  <label class="custom-file-label" for="customFile">Pesquisar</label>
+
+                  <div class="col-lg-3" style="margin-top: 25px; margin-bottom: 30px;">
+                    <button class="btn btn-info" (click)="insereArquivo()" style="background: orangered;">
+                      Inserir Arquivos
+                    </button>
+                  </div>
+                  <div class="datatable">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Arquivo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let arquivo of imagem; let i = index">
+                          <td>{{ i + 1 }}</td>
+                          <td>
+                            <i class="fas fa-file-pdf"></i>
+                            {{ arquivo.imagem?.file?.name }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </mat-tab>
           </mat-tab-group>
-          <div class="card-footer float-right">
-            <button type="submit" class="btn btn-primary" style="margin: 5px;">Salvar
+          <div class="float-right" style="margin-top: 30px;">
+            <button type="submit" class="btn btn-primary" style="margin: 5px;" (click)="SalvarAnuncio()">Salvar
               Anúncio</button>
             <button type="button" class="btn btn-secondary">Cancelar</button>
           </div>
