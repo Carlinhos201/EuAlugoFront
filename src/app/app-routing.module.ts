@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'cadastro', component: FormularioPessoaComponent},
   {path: 'anuncios', component: ListaAnuncioComponent},
   { path: 'minhaconta', component:MinhaContaComponent},
-  {path: 'anuncio_singular', component: ProdutoSingularComponent},
+  {path: 'anuncio_singular/:id', component: ProdutoSingularComponent},
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
 ];
 

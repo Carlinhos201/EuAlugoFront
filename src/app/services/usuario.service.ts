@@ -16,7 +16,7 @@ export class UsuarioService {
   minhaConta(): Observable<any> {
     return this.http.get<any>(`http://localhost:8000/api/usuario/minhaConta`, { headers: this.authService.userToken() });
   }
-  find(id: any): Observable<any> {
-    return this.http.get<any>(`http://localhost:8000/api/usuario/usuario/${id}`, { headers: this.authService.userToken() });
+  find(id: any): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:8000/api/usuario/usuario/${id}`, { headers: this.authService.userToken() });
   }
 }
