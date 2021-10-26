@@ -13,9 +13,6 @@ import { error } from '@angular/compiler/src/util';
 })
 export class FormularioAnuncioComponent implements OnInit {
   isLinear = false ;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  tree: FormGroup;
   fileToUpload: any = [];
   formularioDocs: FormGroup;
   estados: Array<string> = this.cidadeService.estados
@@ -37,15 +34,6 @@ export class FormularioAnuncioComponent implements OnInit {
     this.formularioDocs = this.formBuider.group({
         arquivos: this.formBuider.array([]),
       })
-      this.firstFormGroup = this.formBuider.group({
-        firstCtrl: ['', Validators.required]
-      });
-      this.secondFormGroup = this.formBuider.group({
-        secondCtrl: ['', Validators.required]
-      });
-      this.tree = this.formBuider.group({
-        secondCtrl: ['', Validators.required]
-      });
   }
 
   Formulario(data?) {
@@ -71,7 +59,7 @@ export class FormularioAnuncioComponent implements OnInit {
       cidade_id: [data ? data.cidade_id : '', Validators.required],
       bairro: [data ? data.bairro : '', Validators.required],
       tipo: [data ? data.tipo : '', Validators.required],
-      imagem: [data ? data.imagem : []],
+      imagem: [data ? data.imagem : this.imagem],
       ativo: data ? data.ativo : '',
       uf: data ? data.uf : '',
       valor: [data ? data.valor : '', Validators.required]
@@ -98,8 +86,8 @@ export class FormularioAnuncioComponent implements OnInit {
       if (element.file != null) {
       this.imagem.push({
         id: "",
-        imagem: element,
-        nome: "",
+        imagem: element.file,
+        nome: element.name,
         caminho: "",
         anuncio_id: this.formulario.value.id
       })
@@ -137,10 +125,10 @@ export class FormularioAnuncioComponent implements OnInit {
   SalvarAnuncio() {
     this.formulario.value.imagem = this.imagem
     console.log(this.formulario.value)
-      this.anuncioService.save(this.formulario.value, this.usuario).subscribe(res => {
+      this.anuncioService.save(this.formulario.value, this.usuario).subscribe((res) => {
         Swal.fire("Salvo", "Anúncio salvo com sucesso", "success")
         console.log(res)
-      }, error => {
+      }, (error) => {
         Swal.fire("Ops, deu erro!", "Não foi possível salvar o anúncio", "error")
       }
       )

@@ -124,54 +124,55 @@
 
 </div>
 <router-outlet></router-outlet> -->
+
 <section id="hero" class="d-flex align-items-center">
-    
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                 data-aos="fade-up" data-aos-delay="200">
-                <h1>Seja bem vindo(a) ao <strong style="color: orangered;">Eu Alugo</strong></h1>
-                <h2>O lugar ideal para você encontrar e anuncionar seu Imóvel</h2>
+                <h1>EuAlugo e anuncio sem sair do sofá! <!-- <strong style="color: orangered;"></strong>--></h1>
+                <h2>O lugar ideal para você <strong style="color: white;">encontrar</strong> e <strong style="color: white;">anunciar</strong> seu imóvel.</h2>
                 <div class="row">
                     <div class="d-lg-flex">
-                        <a href="criar-anuncio" class="btn-get-started scrollto">Quero Anunciar</a>
+                        <a href="" class="btn-anuncio scrollto">Quero Anunciar</a>
                     </div>
                     <div class="d-lg-flex">
-                        <a href="anuncios" class="btn-get-started scrollto" >Quero Alugar</a>
+                        <a href="" class="btn-alugo scrollto">Quero Alugar</a>
                     </div>
                 </div>
             </div>
 
         </div>
+
     </div>
-    
+
 </section>
-
 <section>
-    <div class="metade">
-        <div class="texto">
-            <h1>Encontre o anúncio de uma forma mais rápida utilizando o filtro abaixo</h1>
+    <div class="container-60">
+        <div class="title">
+            <h2>Alugar e anunciar nunca foi tão fácil.</h2>
+            <h6>Seu imóvel está a um passo. </h6>
         </div>
-        <form [formGroup]="form"
-            style="color: white;border: groove; background: grey; border-radius: 10px; background: white">
+        <form [formGroup]="form">
 
-            <div class="" style="background: white; padding: 50px 60px 30px 60px">
-                <h3 style="color: grey; text-align: center;margin-bottom: 40px;">Encontre o imóvel ideal para você!
-                </h3>
+            <div class="">
+               <!-- <h3>Encontre o imóvel ideal para você!</h3> -->
 
                 <div class="col-lg-12">
-                    <div class="" style="font: -webkit-small-control;">
+                    <div class="fields" style="font: -webkit-small-control;">
                         <div class="row">
-                            <div class="col-lg-5">
-
+                            <div class="col-lg-4">
+                            <span class="material-icons">map</span>
                                 <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
                                     placeholder="Estado">
                                     <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
                                     </ng-option>
                                 </ng-select>
                             </div>
-                            <div class="col-lg-7">
-                                <ng-select name="cidades" placeholder="Selecione uma Cidade" style="width: 75%;">
+                            <div class="col-lg-8">
+                            <span class="material-icons">place</span>
+                                <ng-select name="cidades" placeholder="Selecione uma Cidade">
                                     <ng-option *ngFor="let city of arrayCidades" [value]="city">
                                         {{city.nome}}
                                     </ng-option>
@@ -184,25 +185,25 @@
 
                 <div class="row" style="font: -webkit-small-control;">
                     <div class="col-lg-6">
-                        <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
+                        <label for="" style="color: grey"><span class="material-icons">maps_home_work</span> Bairro</label>
                         <input class="form-control" type="text" placeholder="Busque por Bairro">
                     </div>
-                    <div class="">
-                        <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
+                    <div class="col-lg-3">
+                        <label for="" style="color: grey"><span class="material-icons">night_shelter</span> Nº de Quartos</label>
                         <input class="form-control" type="text" placeholder="Nº de Quartos">
+                    </div>
+                    <div class="col-lg-3">
+                        <button>
+                            Buscar
+                        </button>
                     </div>
 
                 </div>
             </div>
-            <div style="margin-top: 12px; text-align: center">
-                <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
-                    Buscar
-                </button>
-            </div>
+            
         </form>
     </div>
 </section>
-
 <section id="services" class="services section-bg" style="background-color: khaki;">
     <div class="container" data-aos="fade-up">
 
@@ -212,22 +213,17 @@
                 Aqui estão os Anúncios em maiores destaques
             </p>
         </div>
-       
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="row">
 
-                    <div class="card" style="width: 18rem;" *ngFor="let data of arrayAnuncios">
-                        <img  class="card-img-top" src="{{data.imagem}}" width="320" height="205">
-                        <div class="card-body">
-                            <h5 class="card-title">{{data?.titulo}}</h5>
-                            <p class="card-text">{{data?.descricao}}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                 </div>
             </div>
-            <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="200">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-file"></i></div>
@@ -235,7 +231,7 @@
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                 </div>
             </div>
-            teste
+
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
                 data-aos-delay="300">
                 <div class="icon-box">
@@ -252,13 +248,12 @@
                     <h4><a href="">Nemo Enim</a></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                 </div>
-            </div> -->
+            </div>
 
         </div>
 
     </div>
 </section>
-
 <footer id="footer">
     <div class="footer-top">
         <div class="container">

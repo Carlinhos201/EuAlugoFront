@@ -2072,7 +2072,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 .bg-2 {
-  background-image: url("/../assets/img/anuncio_singular/page-header-1.jpg");
+  /* background-image: url("/../assets/img/anuncio_singular/page-header-1.jpg"); */
   background-size: cover;
 }
 
@@ -2087,7 +2087,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 .bg-coming-soon {
-  background: url("/../assets/img/anuncio_singular/coming-soon-bg.jpg");
+  /* background: url("/../assets/img/anuncio_singular/coming-soon-bg.jpg"); */
   background-size: cover;
   height: 100vh;
 }
@@ -2618,4 +2618,4 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   color: #555;
 }
 
-/*# sourceMappingURL=style.css.map */
+/* # sourceMappingURL=style.css.map */

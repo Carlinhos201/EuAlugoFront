@@ -7,7 +7,7 @@
 }
 
 a {
-    color: grey;
+    color: rgb(122, 122, 122);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -19,7 +19,7 @@ a:hover {
 .logo {
     color: #ff5500;
     font-size: 24px;
-    letter-spacing: 4px;
+    /* letter-spacing: 4px; */
     font-weight: bold;
 }
 
@@ -38,9 +38,7 @@ nav {
 }
 
 .nav-list li {
-    letter-spacing: 2px;
     margin-left: 32px;
-    margin-top: 17px;
 }
 
 .mobile-menu {

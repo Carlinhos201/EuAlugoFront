@@ -1,14 +1,11 @@
-*{
-   font-family: "Poppins", sans-serif;
-}
 
-.background-img {
-  width: 100%;
-  height: 93%;
-  position: absolute;
-  overflow: auto; overflow: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap');
 
+:root {
+  --primary-color: orangered;
+  --secondary-color: #37517e;
+  --featured-color: #ffee00;
+}
 .metade{
     width: 40%;
     top: 0;
@@ -19,8 +16,9 @@
 }
 
 .metade .btn{
-    font-weight: 500;
-    font-size: 14px;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 16px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 10px 28px 11px 28px;
@@ -28,10 +26,11 @@
     transition: 0.5s;
     margin: 10px 0 0 0;
     color: #fff;
-    background: orangered;
+    background: var(--primary-color);
 }
 
 body {
+    font-family: "Open Sans", sans-serif;
     color: #444444;
   }
   
@@ -45,6 +44,7 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
+    font-family: "Rubik", sans-serif;
   }
 
   .back-to-top {
@@ -78,52 +78,119 @@ body {
   #hero {
     width: 100%;
     height: 80vh;
-    position: relative;
-    background-image: url("../../assets/img/home-bg-blur.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    /* background: khaki; */
+    background-image: url('/assets/img/topo-bg.jpg');
   }
-
+  
   #hero .container {
-    padding-top: 72px;
+    /* padding-top: 72px; */
   }
   
   #hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 45px;
-    font-weight: 700;
+    margin: 0 100px 10px 0;
+    font-size: 48px;
+    font-weight: 500;
     line-height: 56px;
-    color: black;
+    color: var(--featured-color);
+    /* color: #ffee00; */
   }
   
   #hero h2 {
-    color: black;
+    color:white;
     margin-bottom: 50px;
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 18px;
   }
   
-  #hero .btn-get-started {
-    font-family: "Jost", sans-serif;
+  #hero .btn-anuncio{
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     display: inline-block;
-    padding: 10px 28px 11px 28px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 10px 0 0 0;
-    color: #fff;
+    padding: 16px 24px 16px 24px;
+    transition: 0.8s;
+    color: var(--primary-color);
+    background: var(--featured-color);
+    margin: 0 32px 0 18px;
+  }
+  #hero .btn-anuncio:hover {
+    background: var(--secondary-color);
+    color: white;
+  }
+
+  #hero .btn-alugo {
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 16px 24px 16px 24px;
+    transition: 0.8s;
+    color: var(--primary-color);
+    background:white;
+    margin-right: 32px;
+  }
+  
+  #hero .btn-alugo:hover {
+    background: var(--secondary-color);
+    color: white;
+  }
+
+  .container-60 {
+    width: 60%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.title {
+  margin-bottom: 36px;
+}
+.title h2 {
+  text-align: center;
+
+}
+ .title h6 {
+   text-align: center;
+   color: grey;
+   font-weight: 300;
+   font-size: 18px;
+ } 
+
+ form {
+   border: 1px solid #dddddd;
+   padding: 48px;
+   border-radius: 16px;
+ }
+
+ form .fields {
+   margin-bottom: 24px;
+ }
+
+ form button {
+  font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 16px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 16px 24px 16px 24px;
+    transition: 0.8s;
     background: orangered;
-    margin-right: 70px;
-  }
-  
-  #hero .btn-get-started:hover {
-    background: white;
-    color: orangered;
-    font-weight: bold;
-  }
-  
+    color: white;
+    border: none;
+    line-height: 40px;
+    width: 100%;
+ }
+
+
+
   #hero .btn-watch-video {
     font-size: 16px;
     display: inline-block;
@@ -504,53 +571,4 @@ body {
 .services .icon-box:hover h4 a {
   color: #47b2e4;
 }
-
- /* animacao container */
-@-webkit-keyframes container {
-  0% { opacity: 0; }
-  100% { opacity: 1; } 
-  }
-  @-moz-keyframes container {
-  0% { opacity: 0;}
-  100% { opacity: 1; }
-  }
-  @-o-keyframes container {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-  }
-  @keyframes container {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-  }
-
-  .container {
-      -webkit-animation: container 2s ease-in-out;
-      -moz-animation: container 2s ease-in-out;
-      -o-animation: container 2s ease-in-out;
-      animation: container 2s ease-in-out;
-      }
-
-/* animacao encontrar imovel */
-      @-webkit-keyframes form {
-        0% { opacity: 0; }
-        100% { opacity: 1; } 
-        }
-        @-moz-keyframes form {
-        0% { opacity: 0;}
-        100% { opacity: 1; }
-        }
-        @-o-keyframes form {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-        }
-        @keyframes form {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-        }
-      
-        .form {
-            -webkit-animation: form 2s ease-in-out;
-            -moz-animation: form 2s ease-in-out;
-            -o-animation: form 2s ease-in-out;
-            animation: form 2s ease-in-out;
-        }
+  
