@@ -13,26 +13,40 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Configurações de Perfil</h4>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nome</label>
-                        <p>{{usuario?.name | titlecase}}</p>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label>
-
+                <div class="row" style="margin-top: 39px;">
+                    <div class="col-lg-7">
+                        <div class="input-group">
+                            <label class="card-title">Nome: </label>
+                            <p style="margin-left: 7px;">{{usuario?.name | titlecase}}</p>
                         </div>
-                        <div class="col-md-12"><label class="labels">Address Line 1</label>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="input-group">
+                                <label class="card-title">E-mail: </label>
+                                <p style="margin-left: 7px;">{{usuario?.email}}</p>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <!-- <div class="row"> -->
+                        <div class="col-lg-7">
+                            <div class="input-group">
+                                <label class="card-title">N° Celular: </label>
+                                <p style="margin-left: 7px;">{{usuario?.celular}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-5 text-center">
                         <button class="btn btn-primary profile-button" type="button"
-                            style="background: orangered; margin-right: 70px;" (click)="openDialog(usuario)">Editar Dados</button>
-                            <button class="btn btn-primary profile-button" type="button">
-                                Meus Anúncios
-                            </button>
+                            style="background: orangered; margin-right: 70px;" (click)="openDialog(usuario)">Editar
+                            Dados</button>
+                        <button class="btn btn-primary profile-button" type="button">
+                            Meus Anúncios
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
