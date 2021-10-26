@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="card-body">
-        <form [formGroup]="formulario">
+        <form [formGroup]="formulario" enctype="multipart/form-data">
           <mat-tab-group>
             <mat-tab>
               <ng-template mat-tab-label>
@@ -356,7 +356,7 @@
                           <td>{{ i + 1 }}</td>
                           <td>
                             <i class="fas fa-file-pdf"></i>
-                            {{ arquivo.imagem?.file?.name }}
+                            {{ arquivo.nome }}
                           </td>
                         </tr>
                       </tbody>
