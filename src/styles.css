@@ -2,6 +2,12 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --primary-color: orangered;
+    --secondary-color: #37517e;
+    --featured-color: #ffee00;
+  }
 .formulario{
     position: absolute;
     width: 40%;
