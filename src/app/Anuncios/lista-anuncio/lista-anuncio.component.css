@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 /*!
 * Start Bootstrap - Shop Homepage v5.0.3 (https://startbootstrap.com/template/shop-homepage)
 * Copyright 2013-2021 Start Bootstrap
@@ -52,7 +53,7 @@
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-rgb: 33, 37, 41;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: system-ui, -apple-system, "Rubik", Rubik, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -77,7 +78,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Rubik', sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -86,6 +87,72 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.bg{
+  width: 100%;
+    height: 40vh;
+    position: relative;
+    background-image: url("/assets/img/ap.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.price {
+  font-weight: 500;
+  font-size: larger;
+  display: block;
+  padding-top: 30px;
+}
+
+.material-icons{
+color: black;
+opacity: 30%;
+padding-left: 10px;
+padding-right: 5px;
+vertical-align: middle;
+}
+
+.icon-quartos{
+display: inline;
+float: left;
+}
+
+.icon-banheiros{
+  display: inline;
+  float: left;
+}
+
+.tipo-anuncio{
+  font-size: small;
+  color: black;
+  opacity: 60%;
+}
+
+.qtd-quartos{
+  display: inline;
+  font-size: small;
+}
+.qtd-quartos2{
+  display: inline;
+  font-size: small;
+  opacity: 60%;
+}
+
+.qtd-banheiros{
+  display: inline;
+  font-size: small;
+}
+.qtd-banheiros2{
+  display: inline;
+  font-size: small;
+  opacity: 60%;
+}
+
+.title{
+  margin-top: 10vh;
+  color: white;
 }
 
 hr {
@@ -3438,13 +3505,18 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  color: #212529;
-  border-color: #212529;
+  color: white;
+  background: linear-gradient(to left, #ff8142, #ff5500);
+  transition: all 0.3s ease;
 }
+
+
 .btn-outline-dark:hover {
-  color: #fff;
-  background-color: #212529;
-  border-color: #212529;
+  color: white;
+  letter-spacing: 1px;
+  background: linear-gradient(to left, #cc4400, #cc4400);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 .btn-check:focus + .btn-outline-dark, .btn-outline-dark:focus {
   box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.5);
@@ -3800,9 +3872,11 @@ textarea.form-control-lg {
   color: #212529;
 }
 
+
+
 .dropdown-menu-dark {
   color: #dee2e6;
-  background-color: #343a40;
+  background-color: red;
   border-color: rgba(0, 0, 0, 0.15);
 }
 .dropdown-menu-dark .dropdown-item {
@@ -3810,7 +3884,7 @@ textarea.form-control-lg {
 }
 .dropdown-menu-dark .dropdown-item:hover, .dropdown-menu-dark .dropdown-item:focus {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: red;
 }
 .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
   color: #fff;
@@ -4507,10 +4581,15 @@ textarea.form-control-lg {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: white;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  transition: all 300ms ease 0s;
+}
+.card:hover{
+  box-shadow: rgb(46 46 46 / 20%) 0px 2px 4px 0px, rgb(46 46 46 / 3%) 0px 4px 8px 0px;
+  transition: all 300ms ease 0s;
 }
 .card > hr {
   margin-right: 0;
@@ -4562,6 +4641,7 @@ textarea.form-control-lg {
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  color: red;
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
@@ -7768,7 +7848,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
 }
 
 .text-reset {

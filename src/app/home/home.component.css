@@ -91,8 +91,8 @@ body {
     font-size: 48px;
     font-weight: 500;
     line-height: 56px;
-    /* color: var(--secondary-color); */
-    color: #ffee00;
+    color: var(--featured-color);
+    /* color: #ffee00; */
   }
   
   #hero h2 {
@@ -111,12 +111,12 @@ body {
     display: inline-block;
     padding: 16px 24px 16px 24px;
     transition: 0.8s;
-    color: orangered;
-    background: #ffee00;
+    color: var(--primary-color);
+    background: var(--featured-color);
     margin: 0 32px 0 18px;
   }
   #hero .btn-anuncio:hover {
-    background: #1C6C99;
+    background: var(--secondary-color);
     color: white;
   }
 
@@ -129,13 +129,13 @@ body {
     display: inline-block;
     padding: 16px 24px 16px 24px;
     transition: 0.8s;
-    color: orangered;
+    color: var(--primary-color);
     background:white;
     margin-right: 32px;
   }
   
   #hero .btn-alugo:hover {
-    background: #1C6C99;
+    background: var(--secondary-color);
     color: white;
   }
 

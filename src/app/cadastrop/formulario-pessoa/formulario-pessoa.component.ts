@@ -25,7 +25,11 @@ export class FormularioPessoaComponent implements OnInit {
       name: [data ? data.name : '', Validators.required],
       email: [data ? data.email : '', Validators.required],
       password: [data ? data.password : '', Validators.required],
+<<<<<<< HEAD
+      celular: data ? data.celular : ''
+=======
       celular: [data ? data.celular : '', Validators.required]
+>>>>>>> 396b17a52480ef3aa3de4a549df1d3b65d58fb28
     });
   }
 
