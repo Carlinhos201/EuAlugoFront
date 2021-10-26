@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -18,6 +18,7 @@ export class ModalPerfilComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private usuarioService: UsuarioService,
+    public dialogRef: MatDialogRef<ModalPerfilComponent>,
     private route: ActivatedRoute,
     private formBuider: FormBuilder,
     private authService: AuthService
@@ -40,34 +41,41 @@ export class ModalPerfilComponent implements OnInit {
       name: [data ? data.name : '', Validators.required],
       email: [data ? data.email : '', Validators.required],
       password: [data ? data.password : '', Validators.required],
-      telefone: data ? data.telefone : ''
+      celular: data ? data.celular : ''
     });
   }
 
   alterarDados(){
-    Swal.fire({
-      title: 'Tem certeza que deseja alterar os dados?',
-      text: "Você não poderá reverter isso!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: 'Não, cancelar',
-      confirmButtonText: 'Sim, alterar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.authService.register(this.formulario.value).subscribe(res => {
+    let perfil = {
+      id: null,
+      name: "",
+      email: "",
+      password: "",
+      celular: ""
+    }
+    // Swal.fire({
+    //   title: 'Tem certeza que deseja alterar os dados?',
+    //   text: "Você não poderá reverter isso!",
+    //   icon: 'warning',
+    //   showCancelButton: true,
+    //   confirmButtonColor: '#3085d6',
+    //   cancelButtonColor: 'Não, cancelar',
+    //   confirmButtonText: 'Sim, alterar'
+    // }).then((result) => {
+    //   if (result.value) {
+        this.authService.update(perfil).subscribe((res) => {
+          console.log(res)
           Swal.fire(
             'Deleted!',
             'Your file has been deleted.',
             'success'
           )
-        }, error => {
         })
         
-      } else {
-        Swal.fire('Cancelado', 'Dados não atualizados!', 'error')
-      }
-    })
+  //     } else {
+  //       Swal.getTimerLeft()
+  //     }
+  //   })
     
   }
 }

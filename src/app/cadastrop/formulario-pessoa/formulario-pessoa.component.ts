@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-pessoa',
@@ -24,20 +25,16 @@ export class FormularioPessoaComponent implements OnInit {
       name: [data ? data.name : '', Validators.required],
       email: [data ? data.email : '', Validators.required],
       password: [data ? data.password : '', Validators.required],
-      telefone: data ? data.telefone : ''
+      celular: [data ? data.celular : '', Validators.required]
     });
   }
 
   register()
   {
-    // this.formulario.patchValue({
-    //   name: this.user.pessoa.cpfcnpj,
-    //   pessoa_id: this.user.pessoa.id
-    // })
       this.authService.register(this.formulario.value).subscribe(res => {
-      // Swal.fire("Salvo", "Salvo com sucesso", "success")
+      Swal.fire("Salvo", "Salvo com sucesso", "success")
     }, error => {
-      // Swal.fire("Ops, deu erro!", "Não foi possível salvar", "error")
+      Swal.fire("Ops, deu erro!", "Não foi possível salvar", "error")
     })
   }
 }

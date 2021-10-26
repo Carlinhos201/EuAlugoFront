@@ -16,14 +16,14 @@ export class ProdutoSingularComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
+  //   this.route.params.subscribe((params) => {
 
-      if (params.hasOwnProperty('id')) {
-      this.anuncioService.find(params['id']).subscribe((data) => {
-          console.log(data);
-          this.data = data
-        });
-      }
-    })
+  //     if (params.hasOwnProperty('id')) {
+  //     this.anuncioService.find(params['id']).subscribe((data) => {
+  //         console.log(data);
+  //         this.data = data
+  //       });
+  //     }
+  //   })
   }
 }
