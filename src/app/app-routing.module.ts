@@ -7,7 +7,7 @@ import { FormularioPessoaComponent } from './cadastrop/formulario-pessoa/formula
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
-
+import {AuthGuardService} from './guards/auth-guard.service'
 
 const routes: Routes = [
   {
@@ -20,10 +20,10 @@ const routes: Routes = [
     // ]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'criar-anuncio', component: FormularioAnuncioComponent},
+  {path: 'criar-anuncio', component: FormularioAnuncioComponent, canActivate:[AuthGuardService]},
   {path: 'cadastro', component: FormularioPessoaComponent},
   {path: 'anuncios', component: ListaAnuncioComponent},
-  { path: 'minhaconta', component:MinhaContaComponent},
+  { path: 'minhaconta', component:MinhaContaComponent, canActivate:[AuthGuardService]},
   {path: 'anuncio_singular/:id', component: ProdutoSingularComponent},
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
 ];
