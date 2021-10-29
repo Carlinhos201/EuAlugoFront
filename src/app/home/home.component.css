@@ -5,6 +5,7 @@
   --primary-color: orangered;
   --secondary-color: #37517e;
   --featured-color: #ffee00;
+  --hover-button: #FFEA81;
 }
 .metade{
     width: 40%;
@@ -189,7 +190,32 @@ body {
     width: 100%;
  }
 
+ form button:hover{
+   background: var(--hover-button);
+   /* color: var(--primary-color) */
+ }
 
+ .material-icons {
+ font-family: 'Material Icons';
+ font-weight: normal;
+ font-style: normal;
+ font-size: 24px;
+ line-height: 1;
+ letter-spacing: normal;
+ display: inline-block;
+ white-space: nowrap;
+ word-wrap: normal;
+ direction: ltr;
+ -webkit-font-feature-settings: 'liga';
+ -webkit-font-smoothing: antialiased;
+ color: var(--primary-color);
+ vertical-align: middle;
+ }
+
+ form label {
+   font-size: 18px;
+   vertical-align: middle;
+ }
 
   #hero .btn-watch-video {
     font-size: 16px;

@@ -163,7 +163,7 @@
                     <div class="fields" style="font: -webkit-small-control;">
                         <div class="row">
                             <div class="col-lg-4">
-                            <span class="material-icons">map</span>
+                           <label>  <span class="material-icons">map</span> Estado</label>
                                 <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
                                     placeholder="Estado">
                                     <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
@@ -171,7 +171,7 @@
                                 </ng-select>
                             </div>
                             <div class="col-lg-8">
-                            <span class="material-icons">place</span>
+                            <label> <span class="material-icons">place</span> Cidade</label>
                                 <ng-select name="cidades" placeholder="Selecione uma Cidade">
                                     <ng-option *ngFor="let city of arrayCidades" [value]="city">
                                         {{city.nome}}
@@ -185,11 +185,11 @@
 
                 <div class="row" style="font: -webkit-small-control;">
                     <div class="col-lg-6">
-                        <label for="" style="color: grey"><span class="material-icons">maps_home_work</span> Bairro</label>
+                        <label><span class="material-icons">maps_home_work</span> Bairro</label>
                         <input class="form-control" type="text" placeholder="Busque por Bairro">
                     </div>
                     <div class="col-lg-3">
-                        <label for="" style="color: grey"><span class="material-icons">night_shelter</span> Nº de Quartos</label>
+                        <label><span class="material-icons">night_shelter</span> Nº de Quartos</label>
                         <input class="form-control" type="text" placeholder="Nº de Quartos">
                     </div>
                     <div class="col-lg-3">

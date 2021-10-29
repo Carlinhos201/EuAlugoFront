@@ -7,6 +7,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --primary-color: orangered;
     --secondary-color: #37517e;
     --featured-color: #ffee00;
+    --hover-button: #EB8706;
+
+
   }
 .formulario{
     position: absolute;
