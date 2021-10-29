@@ -31,7 +31,7 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Nunito", sans-serif;
     color: #444444;
   }
   
@@ -92,6 +92,7 @@ body {
     font-size: 48px;
     font-weight: 500;
     line-height: 56px;
+    /* letter-spacing: -5.5px; */
     color: var(--featured-color);
     /* color: #ffee00; */
   }
@@ -157,6 +158,7 @@ body {
 }
 .title h2 {
   text-align: center;
+  letter-spacing: -0.5px;
 
 }
  .title h6 {
@@ -179,23 +181,20 @@ body {
 
  form .fields {
  display: flex;
- margin-top: 24px;
+ margin: 24px 0;
  }
 
- form .fields1 {
-  display: flex;
-  margin-top: 24px;
-  }
+ 
 
  form label {
-  font-size: 16px;
+  font-size: 14px;
   margin: 6px 16px 0 6px;
 }
 
  form ng-select {
   cursor: pointer;
   min-width: 16px;
-  width: 34%;
+  width: 35%;
   user-select: none;
   border-radius: 0;
   -moz-appearance: none;
@@ -214,7 +213,7 @@ body {
   font-family: "Rubik", sans-serif;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 36px;
     letter-spacing: 0.5px;
     display: inline-block;
@@ -224,7 +223,7 @@ body {
     color: white;
     border: none;
     /* line-height: 40px; */
-    /* width: 100%; */
+    width: 16%;
  }
 
  form button:hover{

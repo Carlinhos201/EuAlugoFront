@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap');
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;  font-family: "Nunito", sans-serif;
+}
 
 :root {
     --primary-color: orangered;
-    --secondary-color: #008384;
+    --secondary-color: #aaaaaa;
     --featured-color: #ffee00;
     --hover-button: #EB8706;
 
@@ -23,4 +26,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-top: 170px;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
