@@ -148,60 +148,61 @@
     </div>
 
 </section>
+
 <section>
     <div class="container-60">
-        <div class="title">
-            <h2>Alugar e anunciar nunca foi tão fácil.</h2>
-            <h6>Seu imóvel está a um passo. </h6>
-        </div>
-        <form [formGroup]="form">
-
-            <div class="">
-               <!-- <h3>Encontre o imóvel ideal para você!</h3> -->
-
-                <div class="col-lg-12">
-                    <div class="fields" style="font: -webkit-small-control;">
-                        <div class="row">
-                            <div class="col-lg-4">
-                           <label>  <span class="material-icons">map</span> Estado</label>
-                                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
-                                    placeholder="Estado">
-                                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
-                                    </ng-option>
-                                </ng-select>
-                            </div>
-                            <div class="col-lg-8">
-                            <label> <span class="material-icons">place</span> Cidade</label>
-                                <ng-select name="cidades" placeholder="Selecione uma Cidade">
-                                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
-                                        {{city.nome}}
-                                    </ng-option>
-                                </ng-select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="row" style="font: -webkit-small-control;">
-                    <div class="col-lg-6">
-                        <label><span class="material-icons">maps_home_work</span> Bairro</label>
-                        <input class="form-control" type="text" placeholder="Busque por Bairro">
-                    </div>
-                    <div class="col-lg-3">
-                        <label><span class="material-icons">night_shelter</span> Nº de Quartos</label>
-                        <input class="form-control" type="text" placeholder="Nº de Quartos">
-                    </div>
-                    <div class="col-lg-3">
-                        <button>
-                            Buscar
-                        </button>
-                    </div>
-
-                </div>
+            <div class="title">
+                <h2>Alugar e anunciar nunca foi tão fácil.</h2>
+                <h6>Seu imóvel está a um passo. </h6>
             </div>
+
+            <form [formGroup]="form">
+
+                  
+                        <div class="fields" style="font: -webkit-small-control;">
+                             
+                                    <label>
+                                        <span class="material-icons">map</span>
+                                        Estado
+                                    </label>
+                                    <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
+                                        placeholder="Estado">
+                                        <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                                        </ng-option>
+                                    </ng-select>
+                                <label>
+                                    <span class="material-icons">place</span>
+                                    Cidade
+                                </label>
+                                    <ng-select name="cidades" placeholder="Selecione uma Cidade">
+                                        <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                                            {{city.nome}}
+                                        </ng-option>
+                                    </ng-select>
+                         
+                    </div>
+
+                    
+                    <div class="fields1" style="font: -webkit-small-control;">
+                            <label>
+                                <span class="material-icons">maps_home_work</span>
+                                    Bairro
+                            </label>
+                            <input class="form-control" type="text" placeholder="Busque por Bairro">
+
+                            <label>
+                                <span class="material-icons">night_shelter</span>
+                                Nº de Quartos
+                            </label>
+                            <input class="form-control" type="text" placeholder="Nº de Quartos">
+
+                            <button>
+                                Buscar
+                            </button>
             
-        </form>
+                    
+                    </div>
+            </form>
     </div>
 </section>
 <section id="services" class="services section-bg" style="background-color: khaki;">

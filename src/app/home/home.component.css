@@ -115,6 +115,8 @@ body {
     color: var(--primary-color);
     background: var(--featured-color);
     margin: 0 32px 0 18px;
+    border-radius: 48px;
+
   }
   #hero .btn-anuncio:hover {
     background: var(--secondary-color);
@@ -133,6 +135,7 @@ body {
     color: var(--primary-color);
     background:white;
     margin-right: 32px;
+    border-radius: 48px;
   }
   
   #hero .btn-alugo:hover {
@@ -162,32 +165,66 @@ body {
    font-weight: 300;
    font-size: 18px;
  } 
-
+/* ====== FORMULÁRIO ALUGAR ====== */
+.card-form {
+  display:grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 1;
+}
  form {
    border: 1px solid #dddddd;
-   padding: 48px;
+   padding: 36px;
    border-radius: 16px;
  }
 
  form .fields {
-   margin-bottom: 24px;
+ display: flex;
+ margin-top: 24px;
  }
 
+ form .fields1 {
+  display: flex;
+  margin-top: 24px;
+  }
+
+ form label {
+  font-size: 16px;
+  margin: 6px 16px 0 6px;
+}
+
+ form ng-select {
+  cursor: pointer;
+  min-width: 16px;
+  width: 34%;
+  user-select: none;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  margin-right: 24px;
+
+ }
+
+ form input {
+  min-width: 16px;
+  max-width: 24%;
+  margin-right: 24px;
+ }
  form button {
   font-family: "Rubik", sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
-    border-radius: 16px;
+    border-radius: 36px;
     letter-spacing: 0.5px;
     display: inline-block;
-    padding: 16px 24px 16px 24px;
+    padding: 8px 16px;
     transition: 0.8s;
-    background: orangered;
+    background: var(--primary-color);
     color: white;
     border: none;
-    line-height: 40px;
-    width: 100%;
+    /* line-height: 40px; */
+    /* width: 100%; */
  }
 
  form button:hover{
@@ -212,10 +249,7 @@ body {
  vertical-align: middle;
  }
 
- form label {
-   font-size: 18px;
-   vertical-align: middle;
- }
+
 
   #hero .btn-watch-video {
     font-size: 16px;
