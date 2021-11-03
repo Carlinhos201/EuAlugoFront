@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import {AuthGuardService} from './guards/auth-guard.service'
+import { MeusAnuncioComponent } from './minha-conta/meus-anuncio/meus-anuncio.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'cadastro', component: FormularioPessoaComponent},
   {path: 'anuncios', component: ListaAnuncioComponent},
   { path: 'minhaconta', component:MinhaContaComponent, canActivate:[AuthGuardService]},
-  {path: 'anuncio_singular/:id', component: ProdutoSingularComponent},
+  {path: 'anuncio_singular', component: ProdutoSingularComponent},
+  {path: 'meus-anuncios', component: MeusAnuncioComponent},
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
 ];
 
