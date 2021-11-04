@@ -92,7 +92,6 @@ body {
     font-size: 48px;
     font-weight: 500;
     line-height: 56px;
-    /* letter-spacing: -5.5px; */
     color: var(--featured-color);
     /* color: #ffee00; */
   }
@@ -158,7 +157,6 @@ body {
 }
 .title h2 {
   text-align: center;
-  letter-spacing: -0.5px;
 
 }
  .title h6 {
@@ -194,7 +192,7 @@ body {
  form ng-select {
   cursor: pointer;
   min-width: 16px;
-  width: 35%;
+  width: 34%;
   user-select: none;
   border-radius: 0;
   -moz-appearance: none;

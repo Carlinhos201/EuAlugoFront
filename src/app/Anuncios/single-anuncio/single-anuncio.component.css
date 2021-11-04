@@ -1,0 +1,99 @@
+body{
+    font-family: "Rubik";
+}
+.header-bg {
+    width: 100%;
+    height: 32vh;
+    position: relative;
+    background-image: url("/assets/img/home-bg-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.header-bg .title-header {
+    text-align: center;
+    padding: 12vh;
+    /* color: var(--primary-color); */
+    letter-spacing: 0.2px;
+}
+
+.container {
+    margin: 24px auto;
+    width: 100%;
+}
+div.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card .img-anuncio {
+    width: 20px;
+}
+.card .img-anuncio img {
+    width: 100%;
+}
+
+
+/* === DETAILS ANUNCIO ==== */
+.details-anuncio {
+    padding: 24px 48px;
+}
+.details-anuncio .title h1{
+    font-size: 24px;
+    text-transform:initial;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+.details-anuncio .map {
+    display: flex;
+}
+.details-anuncio .material-icons{
+    font-size: 18px;
+    margin-right: 4px;
+    color: var(--third-color);
+}
+.details-anuncio .map p {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: var(--third-color);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.details-anuncio .price p {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.details-anuncio .main-info {
+    display: inline-flex;
+    /* grid-template-columns: 1fr; */
+}
+.details-anuncio .main-info span {
+    color: var(--primary-color);
+}
+.details-anuncio .main-info div {
+    display: flex;
+    margin: 0 20px 0 0
+}
+.details-anuncio .description p{
+ color: var(--third-color);
+ margin-bottom: 24px;
+}
+.details-anuncio button {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 32px;
+    letter-spacing: 0.5px;
+    padding: 16px 32px;
+    transition: 0.8s;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 50%;
+}
+.details-anuncio button:hover{
+    background: var(--hover-button);
+}
+
