@@ -60,6 +60,7 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { ModalPerfilComponent } from './minha-conta/modal-perfil/modal-perfil.component'
 import { ProdutoSingularComponent } from './Anuncios/produto-singular/produto-singular.component';
 import { MeusAnuncioComponent } from './minha-conta/meus-anuncio/meus-anuncio.component'
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +78,7 @@ import { MeusAnuncioComponent } from './minha-conta/meus-anuncio/meus-anuncio.co
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CarouselModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

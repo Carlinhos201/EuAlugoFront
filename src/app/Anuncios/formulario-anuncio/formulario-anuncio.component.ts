@@ -88,7 +88,6 @@ export class FormularioAnuncioComponent implements OnInit {
         id: "",
         imagem: element.file,
         nome: element.name,
-        url: "",
         caminho: "",
         anuncio_id: this.formulario.value.id
       })
