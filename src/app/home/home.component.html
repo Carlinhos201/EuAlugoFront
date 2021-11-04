@@ -131,8 +131,11 @@
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                 data-aos="fade-up" data-aos-delay="200">
-                <h1>EuAlugo e anuncio sem sair do sofá! <!-- <strong style="color: orangered;"></strong>--></h1>
-                <h2>O lugar ideal para você <strong style="color: white;">encontrar</strong> e <strong style="color: white;">anunciar</strong> seu imóvel.</h2>
+                <h1>EuAlugo e anuncio sem sair do sofá!
+                    <!-- <strong style="color: orangered;"></strong>-->
+                </h1>
+                <h2>O lugar ideal para você <strong style="color: white;">encontrar</strong> e <strong
+                        style="color: white;">anunciar</strong> seu imóvel.</h2>
                 <div class="row">
                     <div class="d-lg-flex">
                         <a href="/criar-anuncio" class="btn-anuncio scrollto">Quero Anunciar</a>
@@ -151,58 +154,58 @@
 
 <section>
     <div class="container-60">
-            <div class="title">
-                <h2>Alugar e anunciar nunca foi tão fácil.</h2>
-                <h6>Seu imóvel está a um passo. </h6>
+        <div class="title">
+            <h2>Alugar e anunciar nunca foi tão fácil.</h2>
+            <h6>Seu imóvel está a um passo. </h6>
+        </div>
+
+        <form [formGroup]="form">
+
+
+            <div class="fields" style="font: -webkit-small-control;">
+
+                <label>
+                    <span class="material-icons">map</span>
+                    Estado
+                </label>
+                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
+                    placeholder="Estado">
+                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                    </ng-option>
+                </ng-select>
+                <label>
+                    <span class="material-icons">place</span>
+                    Cidade
+                </label>
+                <ng-select name="cidades" placeholder="Selecione uma Cidade">
+                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                        {{city.nome}}
+                    </ng-option>
+                </ng-select>
+
             </div>
 
-            <form [formGroup]="form">
 
-                  
-                        <div class="fields" style="font: -webkit-small-control;">
-                             
-                                    <label>
-                                        <span class="material-icons">map</span>
-                                        Estado
-                                    </label>
-                                    <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
-                                        placeholder="Estado">
-                                        <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
-                                        </ng-option>
-                                    </ng-select>
-                                <label>
-                                    <span class="material-icons">place</span>
-                                    Cidade
-                                </label>
-                                    <ng-select name="cidades" placeholder="Selecione uma Cidade">
-                                        <ng-option *ngFor="let city of arrayCidades" [value]="city">
-                                            {{city.nome}}
-                                        </ng-option>
-                                    </ng-select>
-                         
-                    </div>
+            <div class="fields" style="font: -webkit-small-control;">
+                <label>
+                    <span class="material-icons">maps_home_work</span>
+                    Bairro
+                </label>
+                <input class="form-control" type="text" placeholder="Busque por Bairro">
 
-                    
-                    <div class="fields" style="font: -webkit-small-control;">
-                            <label>
-                                <span class="material-icons">maps_home_work</span>
-                                    Bairro
-                            </label>
-                            <input class="form-control" type="text" placeholder="Busque por Bairro">
+                <label>
+                    <span class="material-icons">night_shelter</span>
+                    Nº de Quartos
+                </label>
+                <input class="form-control" type="text" placeholder="Nº de Quartos">
 
-                            <label>
-                                <span class="material-icons">night_shelter</span>
-                                Nº de Quartos
-                            </label>
-                            <input class="form-control" type="text" placeholder="Nº de Quartos">
+                <button>
+                    Buscar
+                </button>
 
-                            <button>
-                                Buscar
-                            </button>
-            
-                    
-                    </div>
-            </form>
+
+            </div>
+        </form>
     </div>
 </section>
 <section id="services" class="services section-bg" style="background-color: khaki;">
@@ -216,15 +219,41 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100"
+                *ngFor="let data of arrayAnuncios">
+                <owl-carousel-o >
+                    <ng-container *ngFor="let img of data.imagens">
+                        <ng-template carouselSlide>
+                            <img [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
+                            </ng-template>
+                        </ng-container>
+                </owl-carousel-o>
+                <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                    <div class="carousel-inner" *ngFor="let img of data.imagens">
+                      <div class="carousel-item active" >
+                        <img  [src]="'http://localhost:8000/'+'api/imagem/'+img.id" alt="" style="width: 100%;" class="d-block w-100" >
+                      </div>
+                     
+                    </div>
+                   <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </button>
+                  </div> -->
+                <!-- <div class="icon-box">
+                    <img *ngFor="let img of data.imagens" [src]="'http://localhost:8000/'+'api/imagem/'+img.id" alt="" style="width: 100%;">
+                    
                     <div class="icon"><i class="bx bxl-dribbble"></i></div>
                     <h4><a href="">Lorem Ipsum</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                </div>
+                </div> -->
             </div>
 
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="200">
                 <div class="icon-box">
                     <div class="icon"><i class="bx bx-file"></i></div>
@@ -249,7 +278,7 @@
                     <h4><a href="">Nemo Enim</a></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

@@ -26,33 +26,23 @@ export class ModalPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.Formulario()
-    this.route.params.subscribe((params) => {
-      if (params.hasOwnProperty('id')) {
-          this.usuarioService
-          .find(params['id'])
-          .subscribe(res => {
-            this.Formulario(res);
-          });
-      }
-    });
+            // this.formulario = this.formBuider.group({
+            //   name: [ this.usuario.user.name, Validators.required],
+            //   email: [ this.data.email, Validators.required],
+            //   password: [ this.data.password, Validators.required],
+            //   celular:  this.data.celular
+            // });
   }
-  Formulario(data?){
+  Formulario(){
     this.formulario = this.formBuider.group({
-      name: [data ? data.name : '', Validators.required],
-      email: [data ? data.email : '', Validators.required],
-      password: [data ? data.password : '', Validators.required],
-      celular: data ? data.celular : ''
+      name: ["", Validators.required],
+      email: ["", Validators.required],
+      password: ["", Validators.required],
+      celular: ""
     });
   }
 
   alterarDados(){
-    let perfil = {
-      id: null,
-      name: "",
-      email: "",
-      password: "",
-      celular: ""
-    }
     // Swal.fire({
     //   title: 'Tem certeza que deseja alterar os dados?',
     //   text: "Você não poderá reverter isso!",
@@ -63,7 +53,7 @@ export class ModalPerfilComponent implements OnInit {
     //   confirmButtonText: 'Sim, alterar'
     // }).then((result) => {
     //   if (result.value) {
-        this.authService.update(perfil).subscribe((res) => {
+        this.authService.update(this.formulario.value, this.usuario).subscribe(res => {
           console.log(res)
           Swal.fire(
             'Deleted!',

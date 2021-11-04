@@ -58,7 +58,7 @@ export class AuthService {
   register(data): Observable<any> {
     return this.http.post<any>(`http://localhost:8000/api/register`, data);
 }
-update(data): Observable<any> {
+update(data, token): Observable<any> {
   return this.http.post<any>(`http://localhost:8000/api/auth/update`, data, { headers: this.userToken() });
 }
 }

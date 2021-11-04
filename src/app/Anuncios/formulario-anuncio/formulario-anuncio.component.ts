@@ -93,7 +93,8 @@ export class FormularioAnuncioComponent implements OnInit {
       })
       }
     });
-    this.formulario.patchValue({
+    this.formularioDocs.reset()
+    this.formularioDocs.patchValue({
       arquivos: []
     })
   }
