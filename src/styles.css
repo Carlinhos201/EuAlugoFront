@@ -10,6 +10,7 @@ body { margin: 0;  font-family: "Poppins", sans-serif;
     --primary-color: orangered;
     --secondary-color: rgb(51, 51, 51);
     --third-color: rgb(122, 122, 122);
+    --light-grey: rgb(233, 233, 233);
     --featured-color: #ffee00;
     --hover-button: #EB8706;
 

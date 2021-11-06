@@ -40,7 +40,7 @@ body {
   }
   
   a:hover {
-    color: #73c5eb;
+    color: var(--hover-button);
     text-decoration: none;
   }
   
@@ -103,6 +103,7 @@ body {
     font-size: 18px;
   }
   
+
   #hero .btn-anuncio{
     font-family: "Rubik", sans-serif;
     text-transform: uppercase;
@@ -119,7 +120,7 @@ body {
 
   }
   #hero .btn-anuncio:hover {
-    background: var(--secondary-color);
+    background: var(--hover-button);
     color: white;
   }
 
@@ -139,9 +140,9 @@ body {
   }
   
   #hero .btn-alugo:hover {
-    background: var(--secondary-color);
+    background: var(--hover-button);
     color: white;
-  }
+  } 
 
   .container-60 {
     width: 60%;
@@ -176,19 +177,14 @@ body {
    padding: 36px;
    border-radius: 16px;
  }
-
  form .fields {
  display: flex;
  margin: 24px 0;
  }
-
- 
-
  form label {
   font-size: 14px;
   margin: 6px 16px 0 6px;
 }
-
  form ng-select {
   cursor: pointer;
   min-width: 16px;
@@ -199,9 +195,7 @@ body {
   -webkit-appearance: none;
   outline: none;
   margin-right: 24px;
-
  }
-
  form input {
   min-width: 16px;
   max-width: 24%;
@@ -223,12 +217,10 @@ body {
     /* line-height: 40px; */
     width: 16%;
  }
-
  form button:hover{
    background: var(--hover-button);
    /* color: var(--primary-color) */
  }
-
  .material-icons {
  font-family: 'Material Icons';
  font-weight: normal;
@@ -245,36 +237,95 @@ body {
  color: var(--primary-color);
  vertical-align: middle;
  }
+/* ==== ANÚNCIOS ====== */
+ #anuncios{
+  background: var(--light-grey);
+
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  /* vertical-align: center; */
+  /* width: 1400px; */
+  /* position: relative; */
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.card {
+  width: 280px;
+  min-height: 380px;
+  /* position: absolute; */
+}
+.img-card {
+  width: 280px;
+  max-height: 180px;
+  /* background-size: cover; */
+}
+.img-card img{
+  width: 100%;
+}
+.card .title-card {
+  padding: 16px;
+}
+.card .title-card h1{
+  font-size: 18px;
+  text-align: center;
+}
+.card .main-info {
+  display: inline-flex;
+  padding: 0 36px;
+  gap: 4px
+}
+.card .main-info span {
+  margin-right: 4px;
+}
+.card .main-info .material-icons {
+  font-size: 18px;
+}
+.card .main-info p {
+  font-family: "Rubik";
+  font-size: 14px;
+  color: var(--third-color);
+}
+.card .main-info div{
+  display: flex;
+}
+.card .price {
+  padding: 0 24px;
+}
+.card .price p{
+  font-family: "Rubik";
+  font-size: 24px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-align: center;
+}
+.card .button {
+  padding: 24px 56px;
+  margin-bottom: 24px;
+}
+.card .button a{
+  font-family: "Rubik";
+  padding: 12px 24px;
+  color: white;
+  width: 100%;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 32px;
+  transition: 0.8s;
+  background: var(--primary-color);
+}
+.card .button a:hover{
+  background: var(--hover-button);
+}
 
 
 
-  #hero .btn-watch-video {
-    font-size: 16px;
-    display: inline-block;
-    padding: 10px 0 8px 40px;
-    transition: 0.5s;
-    margin: 10px 0 0 25px;
-    color: #fff;
-    position: relative;
-  }
-  
-  #hero .btn-watch-video i {
-    color: #fff;
-    font-size: 32px;
-    position: absolute;
-    left: 0;
-    top: 7px;
-    transition: 0.3s;
-  }
-  
-  #hero .btn-watch-video:hover i {
-    color: #47b2e4;
-  }
-  
-  #hero .animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-  }
-  
   @media (max-width: 991px) {
     #hero {
       height: 100vh;
@@ -360,7 +411,6 @@ body {
     text-align: center;
     padding-bottom: 30px;
   }
-  
   .section-title h2 {
     font-size: 32px;
     font-weight: bold;
@@ -368,7 +418,10 @@ body {
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    color: #37517e;
+    color: var(--secondary-color);
+  }
+  .section-title strong {
+    color: var(--primary-color);
   }
   
   .section-title h2::before {
