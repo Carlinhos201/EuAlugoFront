@@ -1,129 +1,4 @@
-<!-- <div class="card">
 
-    <img src="../../assets/img/home-bg.jpg" alt="">
-
-    <div class="formulario">
-
-
-        <form [formGroup]="form"
-            style="position: absolute;color: white;border: groove; background: grey; border-radius: 10px; background: white">
-
-            <div class="" style="background: white; padding: 50px 60px 30px 60px">
-                <h3 style="color: grey; text-align: center;margin-bottom: 40px;">Encontre o imóvel ideal para você!</h3>
-
-                <div class="col-lg-12">
-                    <div class="" style="font: -webkit-small-control;">
-                        <div class="row">
-                            <div class="col-lg-5">
-
-                                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)"
-                                    placeholder="Estado">
-                                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
-                                    </ng-option>
-                                </ng-select>
-                            </div>
-                            <div class="col-lg-7">
-                                <ng-select name="cidades" placeholder="Selecione uma Cidade" style="width: 75%;">
-                                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
-                                        {{city.nome}}
-                                    </ng-option>
-                                </ng-select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="row" style="font: -webkit-small-control;">
-                    <div class="col-lg-6">
-                        <label for="" style="color: grey"><i class="bi bi-map"></i> Bairro</label>
-                        <input class="form-control" type="text" placeholder="Busque por Bairro">
-                    </div>
-                    <div class="">
-                        <label for="" style="color: grey"><i class="bi bi-door-open"></i> Nº de Quartos</label>
-                        <input class="form-control" type="text" placeholder="Nº de Quartos">
-                    </div>
-
-                </div>
-            </div>
-            <div style="margin-top: 12px; text-align: center">
-                <button class="btn" style="color: white; background: orangered; padding:5px 60px 5px 60px">
-                    Buscar
-                </button>
-                <div style="margin: inherit;">
-                    <p style="text-align: center"> <a href="criar-anuncio">Proprietário anuncie seu imóvel já</a></p>
-                </div>
-
-            </div>
-        </form>
-    </div>
-
-</div>
-
-
-<div style="text-align: center; margin-top: 25px">
-    <h2>Este é o lugar ideal para você alugar seu Imóvel</h2>
-
-    <span>Com facilidade e rapidez</span>
-</div>
-<div style="text-align: center">
-    <h3>Anúncios em destaques</h3>
-</div>
-<div>
-
-
-
-    <div class="row" style="margin-left: 100px; margin-top: 30px">
-        <div class="card border-primary" style="width: 18rem;">
-            <img src="img/teste1.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p>Apartamento</p>
-                <h5 class="card-title">Avenida Mangará</h5>
-                <p class="card-text"><i class="bi bi-rulers"></i> 28 M <i class="bi bi-stopwatch"></i> 3 Quartos</p>
-                <p class="card-text">Aluguel R$ 500</p>
-                <p class="card-text" style="color: green">Total R$ 900</p>
-                <a href="#" class="btn" style=" background: orangered; color: white">Visitar</a>
-            </div>
-        </div>
-        <div class="card border-primary" style="width: 18rem;">
-            <img src="img/teste3.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p>Apartamento</p>
-                <h5 class="card-title">Avenida Mangará</h5>
-                <p class="card-text"><i class="bi bi-rulers"></i> 28 M <i class="bi bi-stopwatch"></i> 3 Quartos</p>
-                <p class="card-text">Aluguel R$ 500</p>
-                <p class="card-text" style="color: green">Total R$ 900</p>
-                <a href="#" class="btn" style=" background: orangered; color: white">Visitar</a>
-            </div>
-        </div>
-        <div class="card border-primary" style="width: 18rem;">
-            <img src="img/teste2.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p>Apartamento</p>
-                <h5 class="card-title">Avenida Mangará</h5>
-                <p class="card-text"><i class="bi bi-rulers"></i> 28 M <i class="bi bi-stopwatch"></i> 3 Quartos</p>
-                <p class="card-text">Aluguel R$ 500</p>
-                <p class="card-text" style="color: green">Total R$ 900</p>
-                <a href="#" class="btn" style=" background: orangered; color: white">Visitar</a>
-            </div>
-        </div>
-        <div class="card border-primary" style="width: 18rem;">
-            <img src="img/teste3.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p>Apartamento</p>
-                <h5 class="card-title">Avenida Mangará</h5>
-                <p class="card-text"><i class="bi bi-rulers"></i> 28 M <i class="bi bi-stopwatch"></i> 3 Quartos</p>
-                <p class="card-text">Aluguel R$ 500</p>
-                <p class="card-text" style="color: green">Total R$ 900</p>
-                <a href="#" class="btn" style=" background: orangered; color: white">Visitar</a>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<router-outlet></router-outlet> -->
 
 <section id="hero" class="d-flex align-items-center">
 
@@ -132,7 +7,6 @@
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                 data-aos="fade-up" data-aos-delay="200">
                 <h1>EuAlugo e anuncio sem sair do sofá!
-                    <!-- <strong style="color: orangered;"></strong>-->
                 </h1>
                 <h2>O lugar ideal para você <strong style="color: white;">encontrar</strong> e <strong
                         style="color: white;">anunciar</strong> seu imóvel.</h2>
@@ -221,14 +95,8 @@
         <div class="row">
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100"
                 *ngFor="let data of arrayAnuncios">
-                <owl-carousel-o >
-                    <ng-container *ngFor="let img of data.imagens">
-                        <ng-template carouselSlide>
-                            <img [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
-                            </ng-template>
-                        </ng-container>
-                </owl-carousel-o>
-                <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+               
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
                     <div class="carousel-inner" *ngFor="let img of data.imagens">
                       <div class="carousel-item active" >
                         <img  [src]="'http://localhost:8000/'+'api/imagem/'+img.id" alt="" style="width: 100%;" class="d-block w-100" >
@@ -243,43 +111,11 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </button>
-                  </div> -->
-                <!-- <div class="icon-box">
-                    <img *ngFor="let img of data.imagens" [src]="'http://localhost:8000/'+'api/imagem/'+img.id" alt="" style="width: 100%;">
-                    
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                </div> -->
+                  </div> 
+                 
             </div>
 
-            <!-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                data-aos-delay="200">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4><a href="">Sed ut perspici</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                data-aos-delay="300">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-tachometer"></i></div>
-                    <h4><a href="">Magni Dolores</a></h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                </div>
-            </div>
- 
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                data-aos-delay="400">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-layer"></i></div>
-                    <h4><a href="">Nemo Enim</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                </div>
-            </div> -->
-
+            
         </div>
 
     </div>
@@ -327,9 +163,7 @@
         <div class="copyright">
             &copy; Copyright <strong><span>Eu Alugo</span></strong>. Todos os Direitos Reservados
         </div>
-        <!-- <div class="credits">
-                Designed by <a href="">BootstrapMade</a>
-            </div> -->
+        
     </div>
 </footer>
 <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
