@@ -20,10 +20,10 @@ export class AnunciosService {
   getAnuncios(): Observable<any[]>{
     return this.http.get<any[]>(`http://localhost:8000/api/anuncios`);
   }
+  getAnunciosByUser(): Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8000/api/anunciosbyuser`, {headers: this.authService.userToken()});
+  }
   find(id): Observable<any>{
     return this.http.get<any>(`http://localhost:8000/api/anuncio/${id}`);
-  }
-  getImagensHome(): Observable<any[]>{
-    return this.http.get<any[]>(`http://localhost:8000/api/imagens`);
   }
 }
