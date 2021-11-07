@@ -1,6 +1,14 @@
 body{
     font-family: "Rubik";
 }
+p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ 
 .header-bg {
     width: 100%;
     height: 32vh;
@@ -16,26 +24,25 @@ body{
     /* color: var(--primary-color); */
     letter-spacing: 0.2px;
 }
-
 .container {
     margin: 24px auto;
     width: 100%;
 }
-div.card {
+div.main-anuncio {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.card .img-anuncio {
+.main-anuncio .img-anuncio {
     width: 20px;
 }
-.card .img-anuncio img {
+.main-anuncio .img-anuncio img {
     width: 100%;
 }
 
 
 /* === DETAILS ANUNCIO ==== */
 .details-anuncio {
-    padding: 24px 48px;
+    padding: 0 48px;
 }
 .details-anuncio .title h1{
     font-size: 24px;
@@ -64,6 +71,7 @@ div.card {
     color: var(--primary-color);
     font-weight: 500;
     letter-spacing: 0.5px;
+    margin: 16px 0;
 }
 .details-anuncio .main-info {
     display: inline-flex;
@@ -78,11 +86,12 @@ div.card {
 }
 .details-anuncio .description p{
  color: var(--third-color);
- margin-bottom: 24px;
+ margin: 24px 0;
 }
 .details-anuncio button {
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
+    font-family: "Nunito";
     font-size: 18px;
     border-radius: 32px;
     letter-spacing: 0.5px;
@@ -96,4 +105,107 @@ div.card {
 .details-anuncio button:hover{
     background: var(--hover-button);
 }
-
+/* ===RELATED ANUNCIOS ====== */
+.row-grey{
+    background:var(--light-grey);
+    height: 1px;
+    width: 80%;
+    margin: 24px auto;
+    
+}
+.related-anuncios h1 {
+    color: var(--secondary-color);
+    letter-spacing: -0.5px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 36px;
+}
+.related-anuncios {
+    padding: 48px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    /* vertical-align: center; */
+    /* width: 1400px; */
+    /* position: relative; */
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .card {
+    width: 214px;
+    min-height: 280px;
+  }
+  .img-card {
+    width: 214px;
+    max-height: 180px;
+  }
+  .img-card img{
+    width: 100%;
+  }
+  .card .title-card {
+    padding: 8px 16px;
+  }
+  .card .title-card h1{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .card .main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card .main-info span {
+    margin-right: 4px;
+  }
+  .card .main-info .material-icons {
+    font-size: 18px;
+    color:var(--primary-color)
+  }
+  .card .main-info p {
+    font-family: "Rubik";
+    font-size: 12px;
+    color: var(--third-color);
+  }
+  .card .main-info div{
+    display: flex;
+  }
+  .card .price {
+    padding: 0 24px;
+    margin-top: 8px ;
+  }
+  .card .price p{
+    font-family: "Rubik";
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-align: center;
+  }
+  .card .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+  }
+  .card .button a{
+    font-family: "Nunito";
+    padding: 8px 16px;
+    color: white;
+    width: 100%;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 32px;
+    transition: 0.8s;
+    background: var(--primary-color);
+  }
+  .card .button a:hover{
+    background: var(--hover-button);
+  }
+  
