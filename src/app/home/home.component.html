@@ -112,23 +112,34 @@
                 </a>
                         
                 <div class="title-card">
-                    <h1>Casa de Praia Angra</h1>
+                    <h1>{{data.titulo}}</h1>
                 </div>
                 <div class="main-info">
                         <div class="bedrooms">
                             <span class="material-icons">king_bed</span>
-                            <p>2 quartos</p>
+                            <p>{{data?.qtd_quartos}} Quartos</p>
                         </div>
                         <div class="bathrooms">
                             <span class="material-icons">bathroom</span>
-                            <p>2 banheiros</p>
+                            <p>{{data?.qtd_banh}} Banheiros</p>
                         </div>
                 </div>
+                <div class="main-info1">
+                    
+                    <div class="bedrooms" style=" display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                    font-size: 20px;
+                    color: var(--third-color);">
+                        <span class="material-icons">location_on</span>
+                        <p>{{data?.cidade.nome}} - {{data?.cidade.uf}}</p>
+                    </div>
+                </div>
                  <div class="price">
-                    <p>R$400,50</p>
+                    <p>{{data?.valor | currency: "BRL"}}</p>
                  </div>
                  <div class="button">
-                    <a href="">Ver Anúncio</a>
+                    <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
                  </div>
             </div>
         </div>

@@ -56,8 +56,8 @@ export class ModalPerfilComponent implements OnInit {
         this.authService.update(this.formulario.value, this.usuario).subscribe(res => {
           console.log(res)
           Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
+            'Sucesso!',
+            'Seus dados foram alterados.',
             'success'
           )
         })

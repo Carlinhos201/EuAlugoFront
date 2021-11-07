@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AnunciosService } from 'src/app/services/anuncios.service';
 
 @Component({
   selector: 'app-meus-anuncio',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeusAnuncioComponent implements OnInit {
 
-  constructor() { }
+  data: Array<any> = []
+
+  constructor(
+    private anunciosService: AnunciosService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+    this.buscaAnunciosId()
   }
-
+     buscaAnunciosId() {
+    this.anunciosService
+      .getAnunciosByUser()
+      .subscribe((data) => {
+        console.log(data)
+        this.data = data
+      })
+  }
 }

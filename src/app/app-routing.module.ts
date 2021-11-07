@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'anuncios', component: ListaAnuncioComponent},
   { path: 'minhaconta', component:MinhaContaComponent, canActivate:[AuthGuardService]},
   {path: 'anuncio_singular/:id', component: ProdutoSingularComponent},
-  {path: 'single-anuncio', component: SingleAnuncioComponent},
+  {path: 'single-anuncio/:id', component: SingleAnuncioComponent},
   {path: 'anuncio_singular', component: ProdutoSingularComponent},
   {path: 'meus-anuncios', component: MeusAnuncioComponent},
   // { path: 'home', redirectTo: '/home', pathMatch: 'full' },
