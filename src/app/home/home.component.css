@@ -7,6 +7,11 @@
   --featured-color: #ffee00;
   --hover-button: #FFEA81;
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
+}
 .metade{
     width: 40%;
     top: 0;
@@ -15,7 +20,6 @@
     bottom: 0;
     margin: auto;
 }
-
 .metade .btn{
     font-family: 'Nunito';
     font-weight: 400;
@@ -30,15 +34,6 @@
     background: var(--primary-color);
 }
 
-body {
-    font-family: "Nunito", sans-serif;
-    color: #444444;
-  }
-  
-  a {
-    color: #47b2e4;
-  }
-  
   a:hover {
     color: var(--hover-button);
     text-decoration: none;
@@ -95,19 +90,16 @@ body {
     color: var(--featured-color);
     /* color: #ffee00; */
   }
-  
   #hero h2 {
     color:white;
     margin-bottom: 50px;
     font-weight: 300;
     font-size: 18px;
   }
-  
-
   #hero .btn-anuncio{
-    font-family: "Rubik", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 16px;
     letter-spacing: 0.5px;
     display: inline-block;
@@ -125,9 +117,9 @@ body {
   }
 
   #hero .btn-alugo {
-    font-family: "Rubik", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 16px;
     letter-spacing: 0.5px;
     display: inline-block;
@@ -138,12 +130,10 @@ body {
     margin-right: 32px;
     border-radius: 48px;
   }
-  
   #hero .btn-alugo:hover {
     background: var(--hover-button);
     color: white;
   } 
-
   .container-60 {
     width: 60%;
     top: 0;
@@ -307,14 +297,14 @@ body {
   margin-bottom: 24px;
 }
 .card .button a{
-  font-family: "Rubik";
+  font-family: "Nunito";
   padding: 12px 24px;
   color: white;
   width: 100%;
   letter-spacing: 0.5px;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   border-radius: 32px;
   transition: 0.8s;
@@ -454,101 +444,39 @@ body {
   --------------------------------------------------------------*/
   #footer {
     font-size: 14px;
-    /* background: khaki; */
   }
-  
-  #footer .footer-newsletter {
-    padding: 50px 0;
-    background: khaki;
-    text-align: center;
-    font-size: 15px;
-    color: orangered;
-  }
-  
-  #footer .footer-newsletter h4 {
-    font-size: 24px;
-    margin: 0 0 20px 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 600;
-    color: orangered;
-  }
-  
-  #footer .footer-newsletter form {
-    margin-top: 30px;
-    /* background: khaki; */
-    padding: 6px 10px;
-    position: relative;
-    border-radius: 50px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
-    text-align: left;
-  }
-  
-  #footer .footer-newsletter form input[type="email"] {
-    border: 0;
-    padding: 4px 8px;
-    width: calc(100% - 100px);
-  }
-  
-  #footer .footer-newsletter form input[type="submit"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    border: 0;
-    background: none;
-    font-size: 16px;
-    padding: 0 20px;
-    background: #47b2e4;
-    color: #fff;
-    transition: 0.3s;
-    border-radius: 50px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  #footer .footer-newsletter form input[type="submit"]:hover {
-    background: #209dd8;
-  }
-  
   #footer .footer-top {
     padding: 60px 0 30px 0;
     /* background: khaki; */
   }
-  
   #footer .footer-top .footer-contact {
     margin-bottom: 30px;
   }
-  
   #footer .footer-top .footer-contact h3 {
-    font-size: 28px;
+    font-family: "Open Sans";
+    font-size: 24px;
     margin: 0 0 10px 0;
-    padding: 2px 0 2px 0;
+    padding: 2px 0;
     line-height: 1;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: orangered;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--primary-color);
   }
-  
   #footer .footer-top .footer-contact p {
     font-size: 14px;
-    line-height: 24px;
     margin-bottom: 0;
-    font-family: "Jost", sans-serif;
-    color: #5e5e5e;
+    color: var(--secondary-color);
   }
-  
   #footer .footer-top h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: orangered;
+    font-size: 24px;
+    color: var(--primary-color);
     position: relative;
     padding-bottom: 12px;
+    letter-spacing: -0.5px;
   }
-  
   #footer .footer-top .footer-links {
     margin-bottom: 30px;
   }
-  
   #footer .footer-top .footer-links ul {
     list-style: none;
     padding: 0;
@@ -557,8 +485,6 @@ body {
   
   #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #37517e;
-    font-weight: bold;
     font-size: 18px;
     line-height: 1;
   }
@@ -574,7 +500,7 @@ body {
   }
   
   #footer .footer-top .footer-links ul a {
-    color: #37517e;
+    color: var(--secondary-color);
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
@@ -588,7 +514,7 @@ body {
   #footer .footer-top .social-links a {
     font-size: 18px;
     display: inline-block;
-    background: orangered;
+    background: var(--primary-color);
     color: white;
     line-height: 1;
     padding: 8px 0;
@@ -601,7 +527,7 @@ body {
   }
   
   #footer .footer-top .social-links a:hover {
-    background: khaki;
+    background: var(--featured-color);
     color: orangered;
     text-decoration: none;
   }
@@ -609,7 +535,7 @@ body {
   #footer .footer-bottom {
     padding-top: 30px;
     padding-bottom: 30px;
-    color: orangered;
+    color: var(--primary-color);
   }
   
   #footer .copyright {
