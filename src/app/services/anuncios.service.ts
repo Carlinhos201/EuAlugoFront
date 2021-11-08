@@ -24,6 +24,6 @@ export class AnunciosService {
     return this.http.get<any[]>(`http://localhost:8000/api/anunciosbyuser`, {headers: this.authService.userToken()});
   }
   find(id): Observable<any>{
-    return this.http.get<any>(`http://localhost:8000/api/anuncio/${id}`);
+    return this.http.get(`http://localhost:8000/api/anuncio/${id}`);
   }
 }

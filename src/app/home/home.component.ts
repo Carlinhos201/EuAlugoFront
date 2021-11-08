@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
+import { SingleAnuncioComponent } from '../Anuncios/single-anuncio/single-anuncio.component';
 import { AnunciosService } from '../services/anuncios.service';
 import {CidadesService} from '../services/cidades.service'
 
@@ -19,7 +21,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private cidadesService: CidadesService,
     private formBuider: FormBuilder,
-    private anunciosService: AnunciosService
+    private anunciosService: AnunciosService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -48,4 +51,13 @@ export class HomeComponent implements OnInit {
         this.arrayAnuncios = res;
       });
   }
+
+  // openDialog(item?) {
+  //   const dialogRef = this.dialog.open(SingleAnuncioComponent, {
+  //     data: item,
+  //   });
+
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //   });
+  // }
 }

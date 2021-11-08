@@ -53,7 +53,7 @@
                     Cidade
                 </label>
                 <ng-select name="cidades" placeholder="Selecione uma Cidade">
-                    <ng-option *ngfor="let city of arrayCidades" [value]="city">
+                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
                         {{city.nome}}
                     </ng-option>
                 </ng-select>
@@ -92,11 +92,11 @@
     </div>
 
     <div class="cards">
-        <div class="card" *ngfor="let data of arrayAnuncios">
+        <div class="card" *ngFor="let data of arrayAnuncios">
 
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active img-card" *ngfor="let img of data.imagens; let i = index" [ngclass]="{'active':i==0}">
+                    <div class="carousel-item active img-card" *ngFor="let img of data.imagens; let i = index" [ngClass]="{'active':i==0}">
                         <img [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
 
                     </div>
@@ -137,7 +137,7 @@
                 <p>{{data?.valor | currency: "BRL"}}</p>
             </div>
             <div class="button">
-                <a [routerlink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
+                <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
             </div>
         </div>
     </div>
