@@ -235,7 +235,7 @@ body {
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1px;
+  gap: 18px;
   /* vertical-align: center; */
   /* width: 1400px; */
   /* position: relative; */
@@ -281,13 +281,17 @@ body {
 .card .main-info div{
   display: flex;
 }
+.card .map .material-icons{
+  font-size: 20px;
+}
 .card .map {
+  display: flex;
   justify-content: center;
-  margin-top: 4px;
 }
 .card .map p {
-  font-size: 14px;
-  color: var(--third-color);
+  font-size: 16px;
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 .card .price {
   padding: 0 24px;
