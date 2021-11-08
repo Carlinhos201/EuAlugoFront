@@ -82,25 +82,22 @@
     </div>
 </section>
 <section id="anuncios">
-        <div class="section-title">
-            <h2>Anúncios em
-                <strong>Destaque</strong>
-            </h2>
-            <p>
-                Confira nossos anúncios em destaque!
-            </p>
-        </div>
+    <div class="section-title">
+        <h2>Anúncios em
+            <strong>Destaque</strong>
+        </h2>
+        <p>
+            Confira nossos anúncios em destaque!
+        </p>
+    </div>
 
-        <div class="cards">
+    <div class="cards">
         <div class="card" *ngFor="let data of arrayAnuncios">
-        
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
-                <div class="carousel-inner" >
-                        <div class="carousel-item active img-card" *ngFor="let img of data.imagens; let i = index" [ngClass]="{'active':i==0}">
-                            <img  [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
-                           
-                        </div>
-                        
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active img-card" *ngFor="let img of data.imagens; let i = index" [ngClass]="{'active':i==0}">
+                        <img [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
 
                     </div>
 
@@ -126,17 +123,11 @@
                             <p>{{data?.qtd_banh}} Banheiros</p>
                         </div>
                 </div>
-                    <div class="map">
-                        <span class="material-icons">location_on</span>
-                        <p>{{data?.cidade.nome}} - {{data?.cidade.uf}}</p>
-                    </div>
-               
-                 <div class="price">
-                    <p>{{data?.valor | currency: "BRL"}}</p>
-                 </div>
-                 <div class="button">
-                    <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
-                 </div>
+            <div class="price">
+                <p>{{data?.valor | currency: "BRL"}}</p>
+            </div>
+            <div class="button">
+                <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
             </div>
         </div>
     </div>

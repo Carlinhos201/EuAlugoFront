@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { AnunciosService } from 'src/app/services/anuncios.service';
+import { ModalEntrarContatoComponent } from './modal-entrar-contato/modal-entrar-contato.component';
 
 @Component({
   selector: 'app-single-anuncio',
@@ -7,20 +10,33 @@ import { AnunciosService } from 'src/app/services/anuncios.service';
   styleUrls: ['./single-anuncio.component.css']
 })
 export class SingleAnuncioComponent implements OnInit {
-arrayAnuncios: Array<any> = []
+
+  data: any = []
+
   constructor(
-    private anunciosService: AnunciosService
+    private route: ActivatedRoute,
+    private anunciosService: AnunciosService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-    this.buscarAnuncios()
+      this.route.params.subscribe(params => {
+      if (params.hasOwnProperty('id')) {
+          this.anunciosService.find(params['id']).subscribe(data => {
+          console.log(data)
+          this.data = data
+        });
+      }
+    });
   }
-    buscarAnuncios()
-    {
-      this.anunciosService.getAnuncios().subscribe(data =>{
-        this.arrayAnuncios = data;
-      })
-    }
+  openDialog(data) {
+    const dialogRef = this.dialog.open(ModalEntrarContatoComponent, {
+      width: '60%',
+      data: data
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 }
 
 

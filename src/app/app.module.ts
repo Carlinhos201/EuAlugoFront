@@ -62,6 +62,7 @@ import { ProdutoSingularComponent } from './Anuncios/produto-singular/produto-si
 import { SingleAnuncioComponent } from './Anuncios/single-anuncio/single-anuncio.component'
 import { MeusAnuncioComponent } from './minha-conta/meus-anuncio/meus-anuncio.component'
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ModalEntrarContatoComponent } from './Anuncios/single-anuncio/modal-entrar-contato/modal-entrar-contato.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ProdutoSingularComponent,
     SingleAnuncioComponent,
     MeusAnuncioComponent,
+    ModalEntrarContatoComponent,
     
   ],
   imports: [
@@ -171,7 +173,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     NgSelectModule,
     MatStepperModule
   ],
-  entryComponents: [ModalPerfilComponent
+  entryComponents: [ModalPerfilComponent, ModalEntrarContatoComponent
   ],
   bootstrap: [AppComponent]
 })
