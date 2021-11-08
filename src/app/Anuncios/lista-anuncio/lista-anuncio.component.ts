@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AnunciosService } from 'src/app/services/anuncios.service';
 @Component({
   selector: 'app-lista-anuncio',
   templateUrl: './lista-anuncio.component.html',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaAnuncioComponent implements OnInit {
 
-  constructor() { }
+  arrayAnuncios: Array<any> = [];
+  constructor(
+    private anunciosService: AnunciosService
+  ) { }
 
   ngOnInit(): void {
+    this.buscarAnuncios();
   }
 
+  buscarAnuncios() {
+    let a: any = [];
+     this.anunciosService.getAnuncios().subscribe((res) => {
+       console.log(res)
+        this.arrayAnuncios = res;
+      });
+  }
 }
