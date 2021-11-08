@@ -281,6 +281,14 @@ body {
 .card .main-info div{
   display: flex;
 }
+.card .map {
+  justify-content: center;
+  margin-top: 4px;
+}
+.card .map p {
+  font-size: 14px;
+  color: var(--third-color);
+}
 .card .price {
   padding: 0 24px;
 }
