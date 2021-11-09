@@ -44,8 +44,8 @@
                     <span class="material-icons">map</span>
                     Estado
                 </label>
-                <ng-select formControlName="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)" placeholder="Estado">
-                    <ng-option *ngFor="let uf of estados" [value]="uf">{{uf}}
+                <ng-select formcontrolname="uf" name="uf" (change)="buscarCidadesPorUf(form.value.uf)" placeholder="Estado">
+                    <ng-option *ngfor="let uf of estados" [value]="uf">{{uf}}
                     </ng-option>
                 </ng-select>
                 <label>
@@ -53,14 +53,14 @@
                     Cidade
                 </label>
                 <ng-select name="cidades" placeholder="Selecione uma Cidade">
-                    <ng-option *ngFor="let city of arrayCidades" [value]="city">
+                    <ng-option *ngfor="let city of arrayCidades" [value]="city">
                         {{city.nome}}
                     </ng-option>
                 </ng-select>
 
             </div>
 
-            <div class="fields" >
+            <div class="fields">
                 <label>
                     <span class="material-icons">maps_home_work</span>
                     Bairro
@@ -82,28 +82,24 @@
     </div>
 </section>
 <section id="anuncios">
-        <div class="section-title">
-            <h2>Anúncios em
-                <strong>Destaque</strong>
-            </h2>
-            <p>
-                Confira nossos anúncios em destaque!
-            </p>
-        </div>
+    <div class="section-title">
+        <h2>Anúncios em
+            <strong>Destaque</strong>
+        </h2>
+        <p>
+            Confira nossos anúncios em destaque!
+        </p>
+    </div>
 
-        <div class="cards">
+    <div class="cards">
         <div class="card" *ngFor="let data of arrayAnuncios">
-        
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
-                <div class="carousel-inner" >
-                        <div class="carousel-item active img-card" *ngFor="let img of data.imagens; let i = index" [ngClass]="{'active':i==0}">
-                            <img  [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
-                           
-                        </div>
-                        
 
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active img-card" *ngFor="let img of data.imagens; let i = index" [ngClass]="{'active':i==0}">
+                        <img [src]="'http://localhost:8000/'+'api/imagem/'+img.id">
                     </div>
-
+                </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -112,111 +108,125 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-                        
+
                 <div class="title-card">
                     <h1>{{data.titulo}}</h1>
                 </div>
-                 <div class="property-type">
+                <div class="property-type">
                     <p>Apartamento</p>
                 </div>
                 <div class="main-info">
-                        <div class="bedrooms">
-                            <span class="material-icons">king_bed</span>
-                            <p>{{data?.qtd_quartos}} Quartos</p>
-                        </div>
-                        <div class="bathrooms">
-                            <span class="material-icons">bathroom</span>
-                            <p>{{data?.qtd_banh}} Banheiros</p>
-                        </div>
-                </div>
-                    <div class="map">
-                        <span class="material-icons">location_on</span>
-                        <p>{{data?.cidade.nome}} - {{data?.cidade.uf}}</p>
+                    <div class="bedrooms">
+                        <span class="material-icons">king_bed</span>
+                        <p>{{data?.qtd_quartos}}
+                            Quartos</p>
                     </div>
-               
-                 <div class="price">
+                    <div class="bathrooms">
+                        <span class="material-icons">bathroom</span>
+                        <p>{{data?.qtd_banh}}
+                            Banheiros</p>
+                    </div>
+                    <div class="width-property">
+                        <span class="material-icons">square_foot</span>
+                        <p>30m2
+                            </p>
+                    </div>
+                    <div class="parking-spot">
+                        <span class="material-icons">garage</span>
+                        <p>1
+                            </p>
+                    </div>
+                </div>
+                <div class="map">
+                    <span class="material-icons">location_on</span>
+                    <p>{{data?.cidade.nome}}
+                        -
+                        {{data?.cidade.uf}}</p>
+                </div>
+
+                <div class="price">
                     <p>{{data?.valor | currency: "BRL"}}</p>
-                 </div>
-                 <div class="button">
+                </div>
+                <div class="button">
                     <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
-   
-    </section>
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        <h3>EuAlugo</h3>
-                        <p>
-                            Avenida Mangará, Jardim Mangará
-                            <br>
-                            Santa Fé do Sul, SP 15775-000<br>
-                            Brasil
-                            <br><br>
-                            <strong>Celular:</strong>
-                            (64) 11234-32123<br>
-                            <strong>Email:</strong>
-                            contato@eualugo.com.br<br>
-                        </p>
-                    </div>
+</section>
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
 
-                    <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>Mapa do site</h4>
-                        <ul>
-                            <li>
-                                <i class="bx bx-chevron-right"></i>
-                                <a href="#">Início</a>
-                            </li>
-                            <li>
-                                <i class="bx bx-chevron-right"></i>
-                                <a href="/criar-anuncio">Anunciar Imóvel</a>
-                            </li>
-                            <li>
-                                <i class="bx bx-chevron-right"></i>
-                                <a href="/anuncios">Encontrar Imóvel</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>Nossas redes sociais</h4>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="facebook">
-                               <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="google-plus">
-                                <i class="fab fa-google-plus-g"></i>
-                            </a>
-                            <a href="#" class="linkedin">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-
+                <div class="col-lg-4 col-md-6 footer-contact">
+                    <h3>EuAlugo</h3>
+                    <p>
+                        Avenida Mangará, Jardim Mangará
+                        <br>
+                        Santa Fé do Sul, SP 15775-000<br>
+                        Brasil
+                        <br><br>
+                        <strong>Celular:</strong>
+                        (64) 11234-32123<br>
+                        <strong>Email:</strong>
+                        contato@eualugo.com.br<br>
+                    </p>
                 </div>
+
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <h4>Mapa do site</h4>
+                    <ul>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#">Início</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="/criar-anuncio">Anunciar Imóvel</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="/anuncios">Encontrar Imóvel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-links">
+                    <h4>Nossas redes sociais</h4>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="google-plus">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <div class="container footer-bottom clearfix">
-            <div class="copyright">
-                &copy; Copyright
-                <strong>
-                    <span>EuAlugo</span></strong>. Todos os Direitos Reservados
-            </div>
-
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; Copyright
+            <strong>
+                <span>EuAlugo</span></strong>. Todos os Direitos Reservados
         </div>
-    </footer>
-    <a href="#" class="back-to-top">
-        <i class="ri-arrow-up-line"></i>
-    </a>
-    <div id="preloader"></div>
+
+    </div>
+</footer>
+<a href="#" class="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+</a>
+<div id="preloader"></div>

@@ -242,6 +242,7 @@ body {
 .card {
   width: 280px;
   min-height: 380px;
+  cursor: pointer;
   /* position: absolute; */
 }
 .img-card {
@@ -263,9 +264,11 @@ body {
   text-align: center;
 }
 .card .main-info {
-  display: inline-flex;
-  padding: 0 36px;
-  gap: 4px
+  padding: 0 28px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 .card .main-info span {
   margin-right: 4px;
