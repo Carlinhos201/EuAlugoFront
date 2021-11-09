@@ -89,18 +89,17 @@ div.main-anuncio {
  margin: 24px 0;
 }
 .details-anuncio button {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-family: "Nunito";
-    font-size: 18px;
-    border-radius: 32px;
-    letter-spacing: 0.5px;
-    padding: 16px 32px;
-    transition: 0.8s;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    width: 50%;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  transition: 0.8s;
+  color: white;
+  background:var(--primary-color);
+  border-radius: 48px;
+  border: none;
 }
 .details-anuncio button:hover{
     background: var(--hover-button);
