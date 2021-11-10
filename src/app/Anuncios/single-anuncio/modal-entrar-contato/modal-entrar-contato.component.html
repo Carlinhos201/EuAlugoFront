@@ -1,10 +1,12 @@
 <mat-dialog-content>
 
-    <section style="overflow: auto;">
+    <section style="overflow: auto; margin-top: 30px;">
         <div style="display: grid; gap: 64px; grid-template-columns: 1fr 500px;">
             <div>
                 <div>
-                    <p>{{data?.proprietario}}</p>
+                    <p style="font-size: 38px;">Proprietario:</p>
+                    <hr>
+                    <p style="font-size: 30px; font-family: sans-serif;">{{data?.proprietario}}</p>
                 </div>
             </div>
             <form action="" style="display: grid;grid-gap: 12px;">
@@ -40,50 +42,6 @@
         </div>
     </section>
 
-    <!-- <form action="" [formGroup]="formulario">
-        <div class="row">
-            <div class="col-lg-6">
-                <label for="usuario">{{data?.name}}</label>
-                <p></p>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-lg-5">
-                <div class="form-group">
-                    <label for=""> Nome</label>
-                    <div class="input-group">
-                        <input type="text" formControlName="name" name="name" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <label for="">E-mail</label>
-                    <div class="input-group">
-                        <input type="email" formControlName="email" name="email" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <label for="">N° Celular</label>
-                    <div class="input-group">
-                        <input type="email" formControlName="celular" name="celular" class="form-control">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="form-group">
-                    <label for="">Senha Atual</label>
-                    <div class="input-group">
-                        <input type="password" formControlName="password" name="password" class="form-control">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form> -->
 </mat-dialog-content>
 <mat-dialog-actions class="float-right">
     <button class="btn btn-info" style="background: orangered; border: none;" type="submit">Alterar

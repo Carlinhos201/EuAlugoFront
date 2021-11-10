@@ -125,7 +125,7 @@ import { ModalEntrarContatoComponent } from './Anuncios/single-anuncio/modal-ent
     MatTooltipModule,
     MatTreeModule,
     MatStepperModule,
-    FontAwesomeModule
+    FontAwesomeModule,
     // MatIconModule
   ],
   exports: [
@@ -171,7 +171,7 @@ import { ModalEntrarContatoComponent } from './Anuncios/single-anuncio/modal-ent
     PortalModule,
     ScrollingModule,
     NgSelectModule,
-    MatStepperModule
+    MatStepperModule,
   ],
   entryComponents: [ModalPerfilComponent, ModalEntrarContatoComponent
   ],

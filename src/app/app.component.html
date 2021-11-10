@@ -24,7 +24,7 @@
                     {{token?.user.name ? token?.user.name  : 'Minha Conta'}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="token" style="padding: 10px 10px 10px 10px;">
-                  <a class="dropdown-item" href="#">Minha conta</a>
+                  <a class="dropdown-item" [routerLink]="['/minhaconta']">Minha conta</a>
                   <a class="dropdown-item" href="#">Esqueci a Senha</a>
                   <div class="dropdown-divider"></div>
                   <button class="dropdown-item" (click)="logout()">Sair</button>
