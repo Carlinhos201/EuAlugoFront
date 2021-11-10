@@ -1,2 +1,89 @@
-<p>meus-anuncio works!</p>
-<h1>deu certo</h1>
+
+<div class="row" *ngIf="qtd_anuncios == 'Vazio'">
+    <div class="col-lg-6">
+        <h1>Meu Anúncios</h1>
+        <p>Aqui aparece a lista dos seus anúncios. Visualize, edite e exclua as informações dos seus anúncios.Cadastre seu primeiro Anúncio!</p>
+        <button type="button" class="btn btn-success" [routerLink]="['/criar-anuncio/']"
+            data-target="pagado"><span class="fas fa-plus" aria-hidden="true"></span> Criar meu primeiro
+            Anúncio</button>
+    </div>
+</div>
+<div *ngIf="qtd_anuncios == 'Possui Dados'" style="margin-top: 170px; margin-left: 39px;">
+    <h2>Meus Anúncios</h2>
+    <hr>
+    <div class="row" >
+    
+        <div class="col-lg-6">
+            <a class="btn btn-primary btn-madelife" [routerLink]="['/criar-anuncio/']"><i
+                    class="fas fa-plus"></i>
+                Novo Anúncio</a>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<mat-card class="table-responsive-vertical" style="padding: 40px 40px 40px 40px;">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                  Título
+                </th>
+                <th>
+                    Criado em
+                </th>
+                <th>
+                    Cidade
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Ações
+                </th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i = index;">
+                <td data-title="Titulo">{{item.titulo | titlecase}}</td>
+                <td data-title="Data">{{item?.created_at | date: 'dd/MM/yyyy'}}</td>
+                <td data-title="Cidade">{{item?.cidade?.nome}}, {{item?.cidade?.uf}}</td>
+                <td data-title="Tipo">{{item?.tipo}}</td>
+                <td data-title="Ações">
+                    <a href="javascript:void(0)" [matMenuTriggerFor]="menu" matTooltip="Outras Ações">
+                        <mat-icon aria-hidden="true" style="color: #4fd994;" aria-label="Example home icon">menu
+                        </mat-icon>
+                    </a>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon style="color: #337ab7;">visibility
+                            </mat-icon>
+                            <span>Visualizar</span>
+                        </button>
+                        <button mat-menu-item [routerLink]="['/criar-anuncio/edit/', item.id]">
+                            <mat-icon style="color: #f0ad4e;">edit
+                            </mat-icon>
+                            <span>Editar</span>
+                        </button>
+
+                        <button mat-menu-item>
+                            <mat-icon style="color: #d9534f;">close
+                            </mat-icon>
+                            <span>Desativar</span>
+                        </button>
+                    </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+        <!-- <tfoot>
+            <tr>
+                <td colspan="6">
+                    <sv-bootstrap-paginator [rowsOnPageSet]="[5,10,25]"></sv-bootstrap-paginator>
+                </td>
+            </tr>
+        </tfoot> -->
+    </table>
+</mat-card>
+<br>

@@ -6,6 +6,7 @@ import { MatStepper } from '@angular/material/stepper';
 import { CidadesService } from 'src/app/services/cidades.service';
 import Swal from 'sweetalert2';
 import { error } from '@angular/compiler/src/util';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-formulario-anuncio',
   templateUrl: './formulario-anuncio.component.html',
@@ -25,7 +26,8 @@ export class FormularioAnuncioComponent implements OnInit {
     private anuncioService: AnunciosService,
     private cidadeService: CidadesService,
     private formBuider: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +36,17 @@ export class FormularioAnuncioComponent implements OnInit {
     this.formularioDocs = this.formBuider.group({
         arquivos: this.formBuider.array([]),
       })
+      this.route.params.subscribe(params => {
+        this.Formulario();
+        if (params.hasOwnProperty('id')) {
+          this.anuncioService.find(params['id']).subscribe(data => {
+            console.log(data)
+            this.buscarCidadesPorUf(data.cidade ? data.cidade.uf : '')
+            this.imagem = data.imagens
+            this.Formulario(data);
+          });
+        }
+      });
   }
 
   Formulario(data?) {
@@ -102,6 +115,7 @@ export class FormularioAnuncioComponent implements OnInit {
     return this.formBuider.group(data);
   }
   detectFiles(event) {
+    
     if (event.target.files.length) {
       for (var i = 0; i < event.target.files.length; i++) {
         console.log(event.target.files[i]);

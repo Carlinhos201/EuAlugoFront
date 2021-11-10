@@ -23,6 +23,7 @@ const routes: Routes = [
   },
   {path: 'login', component: LoginComponent},
   {path: 'criar-anuncio', component: FormularioAnuncioComponent, canActivate:[AuthGuardService]},
+  {path: 'criar-anuncio/edit/:id', component: FormularioAnuncioComponent, canActivate:[AuthGuardService]},
   {path: 'cadastro', component: FormularioPessoaComponent},
   {path: 'anuncios', component: ListaAnuncioComponent},
   { path: 'minhaconta', component:MinhaContaComponent, canActivate:[AuthGuardService]},
