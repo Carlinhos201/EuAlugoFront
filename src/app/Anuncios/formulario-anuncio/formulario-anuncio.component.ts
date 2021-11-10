@@ -22,6 +22,7 @@ export class FormularioAnuncioComponent implements OnInit {
   formulario!: FormGroup;
   usuario: any = JSON.parse(this.authService.getUserLoggedIn());
   imagem: any = []
+  url: any
   constructor(
     private anuncioService: AnunciosService,
     private cidadeService: CidadesService,
@@ -125,9 +126,11 @@ export class FormularioAnuncioComponent implements OnInit {
         reader.readAsDataURL(file);
         reader.onload = () => {
           this.photos.push(
+            
             this.createItem({
               name: file.name,
               file: reader.result,
+              
             })
           );
 
@@ -136,7 +139,10 @@ export class FormularioAnuncioComponent implements OnInit {
 
     }
   }
-
+  deletarImagem(array: any) {
+    let index = this.imagem.indexOf(array);
+    this.imagem.splice(index, 1);
+  }
   SalvarAnuncio() {
     this.formulario.value.imagem = this.imagem
     console.log(this.formulario.value)
