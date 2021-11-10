@@ -1,10 +1,60 @@
-/* * {
+* {
     margin: 0;
     border: 0;
     padding: 0;
     box-sizing: border-box;
     
+}
+body {
+    font-family: "Rubik";
+}
+.header .title{
+    background: url(../../../assets/img/home-bg-blur.jpg) ;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .title h1{
+    text-align: center;
+}
+/* card form init */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+.card-form {
+    width: 80%;
+    margin: auto;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 1px 1px 8px 4px rgba(114, 114, 114, 0.068);
+}
+.card-header {
+    background: none;
+    margin-bottom: 24px;
+}
+.card-header h3{
+    font-size: 36px;
+}
+.card-header p{
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+.red{
+    color: red;
+}
+/* .card-nav {
+    box-shadow: 1px 0px 8px 4px rgba(114, 114, 114, 0.068);
+    
 } */
+mat-tab-group {
+    /* box-shadow: 1px 0px 8px 4px rgba(114, 114, 114, 0.068); */
+    padding: 16px;
+}
+
 .form-control{
     display: block;
     width: 100%;
@@ -20,6 +70,7 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
 .btn{
     display: inline-block;
     font-weight: 400;

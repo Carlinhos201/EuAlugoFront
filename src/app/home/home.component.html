@@ -92,7 +92,7 @@
     </div>
 
     <div class="cards">
-        <div class="card" *ngFor="let data of arrayAnuncios">
+        <div [routerLink]="['/single-anuncio/', data.id]" class="card" *ngFor="let data of arrayAnuncios">
 
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -148,7 +148,7 @@
                     <p>{{data?.valor | currency: "BRL"}}</p>
                 </div>
                 <div class="button">
-                    <a [routerLink]="['/single-anuncio/', data.id]">Ver Anúncio</a>
+                    <a>Ver Anúncio</a>
                 </div>
             </div>
         </div>
