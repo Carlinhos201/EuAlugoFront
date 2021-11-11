@@ -155,7 +155,7 @@ export class FormularioAnuncioComponent implements OnInit {
         Swal.fire("Ops, deu erro!", "Não foi possível salvar o anúncio", "error")
       }
       )
-      // }
+       
     }
     atualizarAnuncio(){
       this.formulario.value.imagem = this.imagem;
