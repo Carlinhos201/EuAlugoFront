@@ -6,7 +6,7 @@ import { MatStepper } from '@angular/material/stepper';
 import { CidadesService } from 'src/app/services/cidades.service';
 import Swal from 'sweetalert2';
 import { error } from '@angular/compiler/src/util';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-formulario-anuncio',
   templateUrl: './formulario-anuncio.component.html',
@@ -28,7 +28,8 @@ export class FormularioAnuncioComponent implements OnInit {
     private cidadeService: CidadesService,
     private formBuider: FormBuilder,
     private authService: AuthService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -103,7 +104,8 @@ export class FormularioAnuncioComponent implements OnInit {
         imagem: element.file,
         nome: element.name,
         caminho: "",
-        anuncio_id: this.formulario.value.id
+        anuncio_id: this.formulario.value.id,
+        url: ''
       })
       }
     });
@@ -139,9 +141,45 @@ export class FormularioAnuncioComponent implements OnInit {
 
     }
   }
-  deletarImagem(array: any) {
-    let index = this.imagem.indexOf(array);
-    this.imagem.splice(index, 1);
+  deletarImagem(item) {
+    let index = this.imagem.indexOf(item);
+    if (!item.id) {
+      this.imagem.splice(index, 1);
+      Swal.fire('Imagem Deletada com Sucesso', '', 'success')
+    } else {
+      const swalButton = Swal.mixin({
+        customClass: {
+          confirmButton: 
+            'btn btn-sucess',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false,
+      });
+      swalButton.fire({
+        title: 'Desativar Imagem?',
+        text: 'Você não poderá reverter!!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Desativar!',
+        cancelButtonText: 'Cancelar!',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.value) {
+            this.anuncioService.deleteImagem(item.id).subscribe(() => {
+            this.imagem.splice(index, 1);
+            Swal.fire('Imagem Deletada com Sucesso', '', 'success');
+          });
+        } else {
+          swalButton.fire(
+            'Cancelado',
+            'Imagem não excluída! :)',
+            'error'
+          );
+        }
+      })
+    }
+    
   }
   SalvarAnuncio() {
     this.formulario.value.imagem = this.imagem
@@ -154,6 +192,27 @@ export class FormularioAnuncioComponent implements OnInit {
       }
       )
        
+    }
+    atualizarAnuncio(){
+      this.formulario.value.imagem = this.imagem;
+      this.anuncioService.update(this.formulario.value.id, this.formulario.value).subscribe((data) =>
+      {
+        Swal.fire('Anúncio atualizado com sucesso!', '', 'success')
+        return this.router.navigate(['/meus-anuncios'])
+      },
+        (error) => {
+          Swal.fire('Erro', 'Erro ao atualizar Anúncio', 'error')
+        }
+      )
+    }
+
+    enviarFormulario()
+    {
+      if (this.formulario.value.id) {
+        this.atualizarAnuncio()
+      } else {
+        this.SalvarAnuncio()
+      }
     }
     async buscarCidadesPorUf(uf) {
       let a: any = [];

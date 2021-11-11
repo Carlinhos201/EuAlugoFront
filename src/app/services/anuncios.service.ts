@@ -26,4 +26,10 @@ export class AnunciosService {
   find(id): Observable<any>{
     return this.http.get(`http://localhost:8000/api/anuncio/${id}`);
   }
+  update(id: any, data: any): Observable<any> {
+    return this.http.put<any>(`${`http://localhost:8000/api/anuncio`}/${id}`, data, { headers: this.authService.userToken() });
+  }
+  deleteImagem(id: any): Observable<any> {
+    return this.http.delete<any>(`${`http://localhost:8000/api/deletaimg`}/${id}`);
+  }
 }
