@@ -141,9 +141,45 @@ export class FormularioAnuncioComponent implements OnInit {
 
     }
   }
-  deletarImagem(array: any) {
-    let index = this.imagem.indexOf(array);
-    this.imagem.splice(index, 1);
+  deletarImagem(item) {
+    let index = this.imagem.indexOf(item);
+    if (!item.id) {
+      this.imagem.splice(index, 1);
+      Swal.fire('Imagem Deletada com Sucesso', '', 'success')
+    } else {
+      const swalButton = Swal.mixin({
+        customClass: {
+          confirmButton: 
+            'btn btn-sucess',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false,
+      });
+      swalButton.fire({
+        title: 'Desativar Imagem?',
+        text: 'Você não poderá reverter!!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Desativar!',
+        cancelButtonText: 'Cancelar!',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.value) {
+            this.anuncioService.deleteImagem(item.id).subscribe(() => {
+            this.imagem.splice(index, 1);
+            Swal.fire('Imagem Deletada com Sucesso', '', 'success');
+          });
+        } else {
+          swalButton.fire(
+            'Cancelado',
+            'Imagem não excluída! :)',
+            'error'
+          );
+        }
+      })
+    }
+    
   }
   SalvarAnuncio() {
     this.formulario.value.imagem = this.imagem
